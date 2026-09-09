@@ -55,11 +55,14 @@ export const    MODE_BASIC = 1;
 export const  MODE_OPTIMAL = 2;
 export const MODE_COMPLETE = 3;
 
+// ТазаКөр: әдепкі режим «complete» (түпнұсқада «optimal» болатын).
+// Бұл кең рұқсатты талап етеді; рұқсат берілмесе background.js алғашқы
+// іске қосылуда автоматты түрде MODE_BASIC режиміне түсіреді.
 export const defaultFilteringModes = {
     none: [],
     basic: [],
-    optimal: [ 'all-urls' ],
-    complete: [],
+    optimal: [],
+    complete: [ 'all-urls' ],
 };
 
 /******************************************************************************/
