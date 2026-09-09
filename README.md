@@ -12,6 +12,8 @@
 > қатысы жоқ, оны қолдамайды және жауап бермейді. Кеңейтімге қатысты
 > мәселелерді түпнұсқа жобаға емес, осы репозиторийге жазыңыз.
 >
+> Репозиторий: <https://github.com/jambyylf/tazakor>
+>
 > Базалық нұсқа: [`2cf4466`](https://github.com/gorhill/uBlock/commit/2cf4466da8f5b7ffce3b98698568330cdab94ff6)
 > (2026-09-07)
 
@@ -92,8 +94,9 @@ GPLv3 талабы бойынша барлық өзгерістер төменд
 Талаптар: Node.js 17.5-тен жоғары, `git`, `jq`, `zip`, `bash`.
 
 ```bash
-git clone <осы репозиторий>
-cd uBlock
+git clone https://github.com/jambyylf/tazakor.git
+cd tazakor
+git checkout brand
 git submodule update --init --recursive
 mkdir -p dist/build/mv3-data
 bash tools/make-mv3.sh chromium
