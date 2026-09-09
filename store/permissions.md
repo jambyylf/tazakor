@@ -140,28 +140,34 @@ only and reads no page content.
 болып саналады. Ашық түсіндіріп, «иә» деген қауіпсіздеу.
 
 ```
-Yes, with an important qualification.
+Yes.
 
-All executable code ships inside the package. Every scriptlet body, every
-content script and the entire filtering engine are bundled; nothing
-executable is fetched at runtime.
+By default the extension executes no remote code. It ships with static
+declarative rulesets and with every scriptlet body inside the package, and
+a default installation fetches nothing.
 
-The qualification: a user may optionally add an external filter list by
-URL. The extension then downloads that file, and while the list stays
-enabled it refreshes it periodically (roughly every seven days by default).
+Remote code becomes possible through one optional feature. The user may add
+an external filter list by URL in the settings. The extension downloads that
+list and, while it stays enabled, refreshes it periodically (about every
+seven days).
 
-That downloaded file is filter-list text, not script. It is parsed into
-declarative net-request rules, CSS selectors, and string arguments passed
-to scriptlets that are already present in the package. Downloaded content
-is never evaluated as code.
+Cosmetic and scriptlet filters from such a list are compiled into a script
+that is registered through chrome.userScripts as a code string. That script
+derives from remotely fetched content, which is why this answer is Yes.
 
-No external list is configured out of the box, so a default installation
-fetches nothing at all.
+Three constraints apply: it runs in the isolated USER_SCRIPT world, only on
+the hostnames the filters specify, and only if the user has explicitly
+enabled user scripts in the browser's extension settings.
+
+Network filters from such a list never become code; they are converted into
+declarative rules handled by the browser.
 ```
 
-*Пакетте орындалатын кодтың бәрі дайын тұр. Қолданушы өзі қосқан сүзгі
-тізімі ғана жүктеледі, ал ол код емес, дерек. Әдепкі күйде ешқандай сыртқы
-тізім жоқ.*
+*Әдепкі күйде қашықтан код орындалмайды. Бірақ қолданушы сыртқы сүзгі
+тізімін қосса, ондағы косметикалық сүзгілер кодқа айналдырылып,
+chrome.userScripts арқылы жол түрінде тіркеледі. Сондықтан жауап «иә».
+Ол оқшауланған әлемде, тек сүзгі көрсеткен сайттарда және қолданушы
+рұқсат берген жағдайда ғана жұмыс істейді.*
 
 ---
 
