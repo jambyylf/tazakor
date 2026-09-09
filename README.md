@@ -1,189 +1,148 @@
-[![Badge Commits]][Commit Rate]
-[![Badge Issues]][Issues]
-[![Badge Localization]][Crowdin]
-[![Badge License]][License]
-[![Badge NPM]][NPM]
-[![Badge Mozilla]][Mozilla]
-![Badge Chrome]
-[![Badge Edge]][Edge]
+# ТазаКөр
 
-***
+**ТазаКөр** — Қазақстанға арналған, қазақ тілді интерфейсі бар жарнама
+бұғаттаушы Chrome кеңейтімі.
 
-<h1 align="center">
-<sub>
-<img src="https://github.com/gorhill/uBlock/blob/master/src/img/ublock.svg" height="38" width="38">
-</sub>
-uBlock Origin (uBO)
-</h1>
+> ### ⚠️ Бұл — форк
+>
+> Бұл жоба [gorhill/uBlock](https://github.com/gorhill/uBlock) репозиторийіндегі
+> **uBlock Origin Lite** (uBOL) кеңейтімінің өзгертілген нұсқасы.
+>
+> Бұл **uBlock Origin емес**. Түпнұсқаның авторы Raymond Hill бұл фаркқа
+> қатысы жоқ, оны қолдамайды және жауап бермейді. Кеңейтімге қатысты
+> мәселелерді түпнұсқа жобаға емес, осы репозиторийге жазыңыз.
+>
+> Базалық нұсқа: [`2cf4466`](https://github.com/gorhill/uBlock/commit/2cf4466da8f5b7ffce3b98698568330cdab94ff6)
+> (2026-09-07)
 
-| Browser   | Install from ... | Status |
-| :-------: | ---------------- | ------ |
-| <img src="https://github.com/user-attachments/assets/b0136512-56a5-4856-8c50-4971c957a24f" alt="Get uBlock Origin for Firefox"> | <a href="https://addons.mozilla.org/addon/ublock-origin/">Firefox Add-ons</a> | [uBO works best on Firefox](https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox) |
-| <img src="https://github.com/user-attachments/assets/3a7569f8-688b-4eb1-a643-8d0fe173aefe" alt="Get uBlock Origin for Microsoft Edge"> | <a href="https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak">Edge Add-ons</a> | <a href="https://blogs.windows.com/msedgedev/2026/08/07/moving-the-microsoft-edge-extensions-ecosystem-forward-with-manifest-version-3/">"Moving the Microsoft Edge extensions ecosystem forward with Manifest Version 3"</a>: "Beginning in August 2026, Microsoft Edge will start the consumer transition away from Manifest Version 2 (MV2) extensions and toward MV3. Our goal is to complete the consumer transition by the end of 2026, with enterprise deprecation following in early 2027." |
-| <img src="https://github.com/user-attachments/assets/938f080c-fe64-4e48-8b89-4bfceabb56e6" alt="Get uBlock Origin for Opera"> | <a href="https://addons.opera.com/extensions/details/ublock/">Opera Add-ons</a> |
-| <img src="https://github.com/user-attachments/assets/5463ef88-873b-4516-8514-5277664cfde7" alt="Get uBlock Origin for Chromium"> | Removed | <a href="https://developer.chrome.com/docs/extensions/develop/migrate/mv2-deprecation-timeline#aug_31st_2026_all_remaining_manifest_v2_extensions_removed_from_the_chrome_web_store">"Manifest V2 support timeline"</a>: "Aug 31st 2026: All remaining Manifest V2 extensions removed from the Chrome Web Store"<br><a href="https://github.com/uBlockOrigin/uBlock-issues/wiki/About-Google-Chrome's-%22This-extension-may-soon-no-longer-be-supported%22">About Google Chrome's "This extension may soon no longer be supported"</a> |
-| <img src="https://github.com/user-attachments/assets/2e9037c4-836d-44c1-a716-ba96e89daaff" alt="Get uBlock Origin for Thunderbird"> | <a href="https://addons.thunderbird.net/thunderbird/addon/ublock-origin/">Thunderbird Add-ons</a> | [No longer updated and stuck at 1.49.2.](https://github.com/uBlockOrigin/uBlock-issues/issues/2928) Later versions require "GitHub - Releases". |
-| <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" height="50" alt="Get uBlock Origin through GitHub"> | <a href="https://github.com/gorhill/uBlock/releases">GitHub - Releases</a> | Stable and development versions on Firefox, Chromium MV2, and Thunderbird. Must be placed manually into web browsers; the Chromium and Thunderbird versions usually won't auto-update.
+---
 
-<h3> Related: 
-<sub>
-<img src="https://github.com/gorhill/uBlock/blob/master/platform/mv3/extension/img/ublock.svg" height="24" width="24">
-</sub>
-<a href="https://github.com/uBlockOrigin/uBOL-home">uBlock Origin Lite</a>
-</h3>
+## Лицензия
 
+**GNU General Public License v3.0 (GPLv3).**
 
-***
+Түпнұсқа жоба GPLv3 бойынша таратылады, сондықтан бұл форк та сол лицензиямен
+таратылады. Толық мәтін өзгертілмеген күйінде [LICENSE.txt](LICENSE.txt)
+файлында тұр.
 
-uBlock Origin (uBO) is a CPU and memory-efficient [wide-spectrum content blocker][Blocking] for Chromium and Firefox. It blocks ads, trackers, coin miners, popups, annoying anti-blockers, malware sites, etc., by default using [EasyList][EasyList], [EasyPrivacy][EasyPrivacy], [Peter Lowe's Blocklist][Peter Lowe's Blocklist], [Online Malicious URL Blocklist][Malicious Blocklist], and uBO [filter lists][uBO Filters]. There are many other lists available to block even more. Hosts files are also supported. uBO uses the EasyList filter syntax and [extends][Extended Syntax] the syntax to work with custom rules and filters.
+Бастапқы код: <https://github.com/gorhill/uBlock>
+Авторлық құқық: Copyright (C) 2014-present Raymond Hill
 
-You may easily unselect any preselected filter lists if you think uBO blocks too much. For reference, Adblock Plus installs with only EasyList, ABP filters, and Acceptable Ads enabled by default.
+GPLv3 талабы бойынша барлық өзгерістер төменде ашық көрсетілген. Бастапқы
+кодтағы авторлық құқық туралы түсініктемелер мен лицензия файлы тиілмеген.
 
-It is important to note that using a blocker is **NOT** [theft]. Do not fall for this creepy idea. The _ultimate_ logical consequence of `blocking = theft` is the criminalization of the inalienable right to privacy.
+---
 
-Ads, "unintrusive" or not, are just the visible portion of the privacy-invading means entering your browser when you visit most sites. **uBO's primary goal is to help users neutralize these privacy-invading methods** in a way that welcomes those users who do not wish to use more technical means.
+## Не өзгертілді
 
-***
+### Брендинг
 
-* [Documentation](#documentation)
-* [Installation](#installation)
-  * [Firefox](#firefox)
-  * [Chromium](#chromium)
-  * [Thunderbird](#thunderbird)
-  * [All Programs](#all-programs)
-  * [Enterprise Deployment](#enterprise-deployment)
-* [Release History](#release-history)
-* [Translations](#translations)
-* [About](#about)
+- Кеңейтімнің атауы, қысқа атауы және авторы `manifest.json` файлдарында
+  ауыстырылды (Chrome, Firefox, Safari).
+- Таңбашалар мен логотип жаңасына ауыстырылды. Логотип таза SVG түрінде,
+  [`assets/brand/`](assets/brand/) папкасында, оны қайта құратын скриптімен бірге.
+- Интерфейстегі «uBlock», «uBO», «uBOL» сөздері жаңа атауға ауыстырылды.
+  Барлығы 71 локальда 632 жол өзгерді.
+- Лицензия файлы мен код ішіндегі авторлық түсініктемелер **тиілмеді**.
 
-## Documentation
+### Қазақ тілі
 
-<table>
-    <thead>
-        <tr>
-            <th>Basic Mode</th>
-            <th>Advanced Mode</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>The <a href="https://github.com/gorhill/uBlock/wiki/Quick-guide:-popup-user-interface">simple popup user interface</a> for an install-it-and-forget-it type of installation that is configured optimally by default.</td>
-            <td>The <a href="https://github.com/gorhill/uBlock/wiki/Dynamic-filtering:-quick-guide">advanced popup user interface</a> includes a point-and-click firewall that is configurable on a per-site basis.</td>
-        </tr>
-        <tr>
-            <td align="center" valign="top"><a href="https://github.com/gorhill/uBlock/wiki/Quick-guide:-popup-user-interface"><img src="https://user-images.githubusercontent.com/585534/232531044-c4ac4dd5-0b60-4c1e-aabb-914be04b846c.png"/></a></td>
-            <td align="center" valign="top"><a href="https://github.com/gorhill/uBlock/wiki/Dynamic-filtering:-quick-guide"><img src="https://user-images.githubusercontent.com/585534/232531439-a8f81cc3-6622-45c4-8b32-7348cecf6e98.png"/></a></td>
-        </tr>
-    </tbody>
-</table>
+- Қазақ локалі толық аударылды, ағылшынша қалған жол жоқ.
+- Терминология қайта қаралды. Мысалы «Үнсіз келісім бойынша» дегеннің орнына
+  «Әдепкі», «оптималды» орнына «оңтайлы», «блоктау» орнына «бұғаттау».
 
-Visit the [Wiki][Wiki] for documentation.
+### Мінез-құлық
 
-For support, questions, or help, visit [/r/uBlockOrigin][Reddit].
+- **Әдепкі сүзгілеу режимі «оңтайлы» орнына «толық» етіп қойылды**
+  ([`mode-manager.js`](platform/mv3/extension/js/mode-manager.js)).
+  Бұл барлық сайттағы деректі оқу рұқсатын талап етеді. Рұқсат берілмесе,
+  кеңейтім автоматты түрде «негізгі» режиміне түседі.
 
-## Installation
+### Сүзгі тізімдері
 
-[Required Permissions][Permissions]
+- Қазақстандық сүзгілерге арналған [`filters/kz.txt`](filters/kz.txt) қосылды.
+  Қосымша тізім ретінде тіркелген, әдепкіде сөндірулі. Әзірге бос.
+  Ереже қосу нұсқаулығы: [`docs/kz-filter-guide.md`](docs/kz-filter-guide.md).
+- Үш аймақтық тізім алынып тасталды: үнді, итальян және испан
+  (`ind-0`, `ita-0`, `spa-0`). Себебі олар орналасқан сервер Қазақстаннан
+  қолжетімсіз, әрі бұл тізімдер жобаның мақсатты аудиториясына қатысы жоқ.
 
-#### Firefox
+### Құрастыру
 
-[Firefox Add-ons][Mozilla]
+- [`tools/make-mv3.sh`](tools/make-mv3.sh) ішіне қадам қосылды: `filters/`
+  папкасындағы жергілікті тізімдер құрастыру алдында кэшке көшіріледі.
+  Node-тың `fetch` функциясы жергілікті файлды оқи алмайтындықтан керек болды.
+- Апталық автоматты синхрондау мен құрастыруға арналған
+  [GitHub Actions workflow](.github/workflows/tazakor-sync.yml) қосылды.
 
-[Development Builds][Beta]
+---
 
-uBO [works best][Works Best] on Firefox and is available for desktop and Android versions.
+## Не өзгертілмеді
 
-#### Chromium
+- `LICENSE.txt` — түпнұсқадағы GPLv3 мәтіні өзгеріссіз.
+- Бастапқы кодтағы авторлық құқық туралы түсініктемелер.
+- Сүзгілеу қозғалтқышы мен негізгі логика.
+- Сүзгі тізімдерінің мазмұны (uAssets, EasyList және басқалары түпнұсқа
+  күйінде жүктеледі).
 
-Chrome Web Store: Removed on 2026-08-31
+---
 
-[Microsoft Edge Add-ons][Edge] (Published by [Nicole Rolls][Nicole Rolls] until version 1.62. Ownership transfer at version 1.64.)
+## Құрастыру
 
-[Opera Add-ons][Opera]
+Талаптар: Node.js 17.5-тен жоғары, `git`, `jq`, `zip`, `bash`.
 
-uBO should be compatible with any Chromium-based browser.
+```bash
+git clone <осы репозиторий>
+cd uBlock
+git submodule update --init --recursive
+mkdir -p dist/build/mv3-data
+bash tools/make-mv3.sh chromium
+```
 
-#### Thunderbird
+Нәтиже: `dist/build/uBOLite.chromium/`
 
-[Thunderbird Add-ons][Thunderbird]
+Chrome-ға орнату:
 
-In Thunderbird, uBlock Origin does not affect emails, just feeds.
+1. `chrome://extensions` бетін ашыңыз.
+2. **Developer mode** қосқышын қосыңыз.
+3. **Load unpacked** түймесін басып, жоғарыдағы папканы таңдаңыз.
+4. **Details** ішінен **Site access** мәні **On all sites** екенін тексеріңіз.
 
-#### All Programs
+---
 
-Do **NOT** use uBO with any other content blocker. uBO [performs][Performance] as well as or better than most popular blockers. Other blockers can prevent uBO's privacy or anti-blocker-defusing features from working correctly.
+## Өз сүзгіңізді қосу
 
-[Manual Installation][Manual Installation]
+Ережелерді [`filters/kz.txt`](filters/kz.txt) файлына жазып, қайта
+құрастырыңыз. Синтаксис нұсқаулығы: [`docs/kz-filter-guide.md`](docs/kz-filter-guide.md).
 
-#### Enterprise Deployment
+---
 
-[Deploying uBO][Deployment]
+## Алғыс
 
-## Release History
+Бұл жоба Raymond Hill (@gorhill) және uBlock Origin қауымдастығының
+көпжылдық еңбегіне негізделген. Сүзгі тізімдерін
+[uAssets](https://github.com/uBlockOrigin/uAssets), EasyList және
+басқа да ашық жобалардың авторлары жасайды.
 
-[Releases Page][Releases]
+---
 
-## Translations
+## English summary
 
-Help translate uBO via [Crowdin][Crowdin].
+**TazaKor** is a Kazakh-language fork of
+[uBlock Origin Lite](https://github.com/gorhill/uBlock) (MV3), targeted at
+users in Kazakhstan.
 
-## About
+This is **not** uBlock Origin and is **not** affiliated with or endorsed by
+Raymond Hill. Please do not report issues with this fork to the upstream
+project.
 
-[Manifesto][Manifesto]
+Licensed under **GPLv3**, same as the original. The license text in
+[LICENSE.txt](LICENSE.txt) is unmodified, and copyright headers in source
+files are preserved.
 
-[Privacy Policy][Privacy Policy]
-
-[GPLv3 License][License]
-
-Free. Open-source. For users by users. No donations sought.
-
-If you ever want to contribute something, think about the people working hard to maintain the filter lists you are using, which are available to use by all for free.
-
-
-<!----------------------------------------------------------------------------->
-
-[Peter Lowe's Blocklist]: https://pgl.yoyo.org/adservers/
-[Malicious Blocklist]: https://gitlab.com/malware-filter/urlhaus-filter#malicious-url-blocklist
-[Performance]: https://www.debugbear.com/blog/chrome-extensions-website-performance#the-impact-of-ad-blocking-on-website-performance
-[EasyPrivacy]: https://easylist.to/#easyprivacy
-[Thunderbird]: https://addons.thunderbird.net/thunderbird/addon/ublock-origin/
-[EasyList]: https://easylist.to/#easylist
-[Mozilla]: https://addons.mozilla.org/addon/ublock-origin/
-[Crowdin]: https://crowdin.com/project/ublock
-[Reddit]: https://www.reddit.com/r/uBlockOrigin/
-[Theft]: https://x.com/LeaVerou/status/518154828166725632
-[Opera]: https://addons.opera.com/extensions/details/ublock/
-[Edge]: https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak
-[NPM]: https://www.npmjs.com/package/@gorhill/ubo-core
-
-[Manifesto]: MANIFESTO.md
-[License]: LICENSE.txt
-
-[Nicole Rolls]: https://github.com/nicole-ashley
-
-<!---------------------------------[ Internal ]-------------------------------->
-
-[Manual Installation]: https://github.com/gorhill/uBlock/tree/master/dist#install
-[Extended Syntax]: https://github.com/gorhill/uBlock/wiki/Static-filter-syntax#extended-syntax
-[Privacy Policy]: https://github.com/gorhill/uBlock/wiki/Privacy-policy
-[uBO Filters]: https://github.com/uBlockOrigin/uAssets/tree/master/filters
-[Permissions]: https://github.com/gorhill/uBlock/wiki/Permissions
-[Commit Rate]: https://github.com/gorhill/uBlock/commits/master
-[Works Best]: https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox
-[Deployment]: https://github.com/gorhill/uBlock/wiki/Deploying-uBlock-Origin
-[Blocking]: https://github.com/gorhill/uBlock/wiki/Blocking-mode
-[Releases]: https://github.com/gorhill/uBlock/releases
-[Issues]: https://github.com/uBlockOrigin/uBlock-issues/issues
-[Beta]: https://github.com/gorhill/uBlock/blob/master/dist/README.md#for-beta-version
-[Wiki]: https://github.com/gorhill/uBlock/wiki
-
-<!----------------------------------[ Badges ]--------------------------------->
-
-[Badge Localization]: https://d322cqt584bo4o.cloudfront.net/ublock/localized.svg
-[Badge Commits]: https://img.shields.io/github/commit-activity/m/gorhill/ublock?label=Commits
-[Badge Mozilla]: https://img.shields.io/amo/rating/ublock-origin?label=Firefox
-[Badge License]: https://img.shields.io/badge/License-GPLv3-blue.svg
-[Badge Chrome]: https://img.shields.io/chrome-web-store/rating/cjpalhdlnbpafiamejdnhcphjbkeiagm?label=Chrome
-[Badge Edge]: https://img.shields.io/badge/dynamic/json?label=Edge&color=brightgreen&query=%24.averageRating&suffix=%2F%35&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fodfafepnkmbhccpbejgmiehpchacaeak
-[Badge Issues]: https://img.shields.io/github/issues/uBlockOrigin/uBlock-issues
-[Badge NPM]: https://img.shields.io/npm/v/@gorhill/ubo-core
+Changes from upstream: rebranding (name, icons, UI strings across 71 locales),
+a fully revised Kazakh translation, default filtering mode changed from
+*optimal* to *complete*, an optional Kazakhstan filter list, removal of three
+regional lists whose host is unreachable from Kazakhstan, a build step for
+local filter lists, and a weekly upstream-sync workflow. Details are listed
+in the Kazakh sections above.
