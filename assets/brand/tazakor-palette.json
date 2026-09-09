@@ -1,0 +1,12 @@
+{
+  "bg":        "#12131F",
+  "surface":   "#1C1E2E",
+  "border":    "#6B7192",
+  "accent":    "#BB5BFA",
+  "accentHover": "#CB7FFB",
+  "logoBlue":  "#14A5F1",
+  "text":      "#F3F4F9",
+  "muted":     "#9AA0B8",
+  "success":   "#34D399",
+  "error":     "#FF7A7A"
+}
