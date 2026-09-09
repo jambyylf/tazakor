@@ -314,8 +314,10 @@ self.ubolOverlay = {
         // тілді URL арқылы жеткіземіз, i18n.js оны ?lang= параметрінен оқиды.
         try {
             const bin = await this.webext.storage.local.get('rulesetConfig');
-            const lang = bin?.rulesetConfig?.uiLanguage || '';
-            if ( /^[a-z]{2}(_[A-Za-z]+)?$/.test(lang) ) {
+            const lang = bin?.rulesetConfig?.uiLanguage;
+            // Бос жол да мағыналы: ол «браузердің тілі» деген таңдау.
+            // Мән мүлдем сақталмаған болса ғана параметрсіз жібереміз.
+            if ( lang === '' || /^[a-z]{2}(_[A-Za-z]+)?$/.test(lang || '') ) {
                 dynamicURL.searchParams.set('lang', lang);
             }
         } catch {

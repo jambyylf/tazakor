@@ -51,24 +51,20 @@ function renderWidgets() {
     // көз, ал шындықтың көзі chrome.storage. Екеуі айырылып қалса (жасырын
     // терезе, деректер тазаланған), осы жерде түзеп, бір рет қайта жүктейміз.
     {
-        const lang = data.uiLanguage || '';
+        const lang = data.uiLanguage ?? '';
         qs$('#uiLanguage').value = lang;
-        let mirrored = null;
-        try { mirrored = self.localStorage.getItem('ubol.uiLanguage'); } catch {}
-        if ( (mirrored || '') !== lang ) {
-            try {
-                if ( lang !== '' ) {
-                    self.localStorage.setItem('ubol.uiLanguage', lang);
-                } else {
-                    self.localStorage.removeItem('ubol.uiLanguage');
-                }
-                // Шексіз цикл болмауы үшін бір реттік жалауша
-                if ( self.sessionStorage.getItem('ubol.langSynced') === null ) {
-                    self.sessionStorage.setItem('ubol.langSynced', '1');
-                    self.location.reload();
-                    return;
-                }
-            } catch {}
+        // Бос жол мен «мүлдем жазылмаған» күйді ажырату керек, сондықтан
+        // кілт өшірілмейді, бос мән болып жазылады.
+        try { self.localStorage.setItem('ubol.uiLanguage', lang); } catch {}
+        // Бет қай тілде боялғанын i18n.js өзі айтады. Сақталған таңдау одан
+        // өзгеше болса ғана қайта жүктейміз, әйтпесе әдепкі күйде де әр
+        // ашқанда reload болар еді.
+        if ( lang !== (self.ubolUiLanguage ?? '') ) {
+            if ( self.sessionStorage.getItem('ubol.langSynced') === null ) {
+                try { self.sessionStorage.setItem('ubol.langSynced', '1'); } catch {}
+                self.location.reload();
+                return;
+            }
         }
     }
 
@@ -225,11 +221,7 @@ dom.on('#uiLanguage', 'change', ev => {
     const lang = ev.target.value || '';
     sendMessage({ what: 'setUiLanguage', lang }).then(( ) => {
         try {
-            if ( lang !== '' ) {
-                self.localStorage.setItem('ubol.uiLanguage', lang);
-            } else {
-                self.localStorage.removeItem('ubol.uiLanguage');
-            }
+            self.localStorage.setItem('ubol.uiLanguage', lang);
             self.sessionStorage.removeItem('ubol.langSynced');
         } catch {}
         self.location.reload();
@@ -307,11 +299,7 @@ listen.onmessage = ev => {
         if ( message.uiLanguage !== local.uiLanguage ) {
             local.uiLanguage = message.uiLanguage;
             try {
-                if ( message.uiLanguage !== '' ) {
-                    self.localStorage.setItem('ubol.uiLanguage', message.uiLanguage);
-                } else {
-                    self.localStorage.removeItem('ubol.uiLanguage');
-                }
+                self.localStorage.setItem('ubol.uiLanguage', message.uiLanguage);
                 self.sessionStorage.removeItem('ubol.langSynced');
             } catch {}
             self.location.reload();

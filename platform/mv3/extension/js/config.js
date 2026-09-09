@@ -35,7 +35,7 @@ export const rulesetConfig = {
     strictBlockMode: webextFlavor !== 'safari',
     popupBlockMode: true,
     developerMode: false,
-    uiLanguage: '',
+    uiLanguage: 'kk',
     hasBroadHostPermissions: true,
 };
 
