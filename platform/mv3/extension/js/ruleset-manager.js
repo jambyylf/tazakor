@@ -300,8 +300,11 @@ async function updateStrictBlockRules(currentRules, addRules, removeRuleIds) {
 
     // ТазаКөр: бұл бет use_dynamic_url арқылы бөлек origin-де ашылады,
     // сондықтан таңдалған тілді URL арқылы жеткіземіз.
-    const uiLang = rulesetConfig.uiLanguage || '';
-    const langQuery = /^[a-z]{2}(_[A-Za-z]+)?$/.test(uiLang) ? `?lang=${uiLang}` : '';
+    const uiLang = rulesetConfig.uiLanguage;
+    // Бос жол «браузердің тілі» деген таңдау, сондықтан ол да жіберіледі.
+    const langQuery = uiLang === '' || /^[a-z]{2}(_[A-Za-z]+)?$/.test(uiLang || '')
+        ? `?lang=${uiLang}`
+        : '';
     const substitution = `${runtime.getURL('/strictblock.html')}${langQuery}#\\0`;
     const allRules = [];
     for ( const rules of rulesets ) {

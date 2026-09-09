@@ -51,20 +51,36 @@ const i18n =
 
 const UI_LANG_KEY = 'ubol.uiLanguage';
 
+// Кеңейтім қазақ тілді қолданушыға арналған, сондықтан ештеңе таңдалмаған
+// күйде де қазақша сөйлейді.
+const DEFAULT_UI_LANG = 'kk';
+
 const uiLanguage = (( ) => {
     const valid = v => typeof v === 'string' && /^[a-z]{2}(_[A-Za-z]+)?$/.test(v);
     try {
         const v = new URL(self.location.href).searchParams.get('lang');
+        // ?lang= (бос) — қолданушы «браузердің тілі» дегенді әдейі таңдаған.
+        // Параметр мүлдем жоқ болса — төмендегі көздерге түсеміз.
+        if ( v === '' ) { return ''; }
         if ( valid(v) ) { return v; }
     } catch {
     }
     try {
         const v = self.localStorage.getItem(UI_LANG_KEY);
+        // Үш түрлі күй: null — ешқашан таңдалмаған, әдепкіні аламыз;
+        // бос жол — қолданушы «браузердің тілі» дегенді ӘДЕЙІ таңдаған;
+        // қалғаны — нақты тіл.
+        if ( v === '' ) { return ''; }
         if ( valid(v) ) { return v; }
     } catch {
+        return '';
     }
-    return '';
+    return DEFAULT_UI_LANG;
 })();
+
+// settings.js осы мәнді chrome.storage-тағы мәнмен салыстырады, сондықтан
+// логиканы екі жерде қайталамау үшін нәтижені сыртқа шығарамыз.
+self.ubolUiLanguage = uiLanguage;
 
 if ( uiLanguage !== '' ) {
     const runtime =
