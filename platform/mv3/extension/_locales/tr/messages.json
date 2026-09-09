@@ -152,7 +152,7 @@
     "description": "Header of 'Report a filter issue' section in Support pane"
   },
   "supportS3P1": {
-    "message": "Bir sitedeki filtre sorunlarını bildirmek için <span data-url=\"https://github.com/uBlockOrigin/uAssets/issues?q=is%3Aissue\"><code>uBlockOrigin/uAssets</code> sorun takibi</span> sayfasını kullanın. <u>Bir GitHub hesabı gerekir.</u>",
+    "message": "Bir sitedeki filtre sorunlarını bildirmek için <span data-url=\"https://github.com/jambyylf/tazakor/issues?q=is%3Aissue\"><code>jambyylf/tazakor</code> sorun takibi</span> sayfasını kullanın. <u>Bir GitHub hesabı gerekir.</u>",
     "description": "First paragraph of 'Filter issues' section in Support pane"
   },
   "supportS5H": {
@@ -324,7 +324,7 @@
     "description": "Web page title for the strict-blocked page"
   },
   "strictblockSentence1": {
-    "message": "uBo Lite aşağıdaki sayfaların yüklenmesini engelledi:",
+    "message": "TazaKor aşağıdaki sayfaların yüklenmesini engelledi:",
     "description": "Sentence used in the strict-blocked page"
   },
   "strictblockReasonSentence1": {

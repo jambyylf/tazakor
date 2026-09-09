@@ -8,7 +8,8 @@
 | `permissions.md` | Әр рұқсаттың негіздемесі, модераторларға арналған |
 | `privacy-policy.md` | Құпиялық саясаты, сілтемесі өтінімде сұралады |
 | `screenshots/` | 1280×800 өлшеміндегі төрт сурет |
-| `promo-440x280.png` | Кіші промо-плитка |
+| `icon-128.png` | Дүкен таңбашасы, 128×128, міндетті өріс |
+| `promo-440x280.png` | Кіші промо-плитка, қосымша |
 
 ---
 
@@ -53,6 +54,7 @@ python tools/make-store-zip.py
 | Description | `listing.md` ішінен, тілге сай |
 | Category | Productivity немесе Tools |
 | Language | Kazakh (негізгі) |
+| Store icon | `store/icon-128.png` (128×128, міндетті) |
 | Screenshots | `screenshots/` ішіндегі төртеуі |
 | Small promo tile | `promo-440x280.png` |
 | Privacy policy URL | 4-бөлімді қара |
@@ -77,8 +79,10 @@ GitHub Pages қосуға болады, бірақ бұл міндетті ем�
 
 ## 5. Рұқсаттар
 
-«Privacy practices» бөлімінде әр рұқсат үшін негіздеме сұралады.
-Мәтіндер `permissions.md` файлында дайын тұр, ағылшынша.
+«Privacy practices» бөлімінде үш нәрсе сұралады: бір сөйлемдік «Single
+purpose», әр рұқсаттың негіздемесі және «Are you using remote code?»
+деген сұраққа жауап. Үшеуінің де мәтіні `permissions.md` файлында дайын
+тұр, ағылшынша.
 
 Ең мұқият қаралатыны — `<all_urls>`. Онда толық режимнің не үшін
 керегін және рұқсат берілмесе кеңейтім өзі негізгі режимге түсетінін

@@ -6,6 +6,21 @@ Chrome Web Store әр рұқсат үшін негіздеме сұрайды. �
 
 ---
 
+## Single purpose (панельдегі бірінші өріс)
+
+```
+Blocking advertising, tracking and cryptomining requests on web pages.
+
+Every capability the extension requests exists to serve that one purpose:
+declarative rules block the requests, cosmetic filtering hides the elements
+that remain, and storage keeps the user's own filtering preferences.
+```
+
+*Кеңейтімнің жалғыз мақсаты: беттердегі жарнаманы, трекерлерді және
+майнерлерді бұғаттау.*
+
+---
+
 ## declarativeNetRequest
 
 ```
@@ -61,8 +76,11 @@ moment the user clicks the button.
 
 ```
 Executes scriptlet filters, which neutralise anti-adblock scripts and
-similar page behaviour. This capability is off by default; the user must
-explicitly enable "Allow user scripts" in the browser's extension settings.
+similar page behaviour. This capability is off by default and requires an
+explicit opt-in by the user: on Chrome 138 and later via the per-extension
+"Allow user scripts" toggle, and on earlier versions by enabling Developer
+mode. If the user does not opt in, scriptlet filters simply do not run; the
+rest of the extension is unaffected.
 ```
 
 *Скриптлет сүзгілерін орындау үшін. Әдепкіде сөндірулі.*
@@ -106,6 +124,28 @@ falls back to the basic mode when broad access has not been granted.
 
 *Толық режим барлық сайттағы мазмұнды өзгертуді талап етеді. Рұқсат
 берілмесе, кеңейтім автоматты түрде негізгі режимге түседі.*
+
+---
+
+## Remote code декларациясы
+
+Панельдегі сұрақ: «Are you using remote code?» Жауап: **Жоқ, қолданбаймыз.**
+Түсіндірмесі:
+
+```
+No. All executable code ships inside the package. The declarative rulesets
+are static JSON generated at build time and bundled with the extension.
+
+One clarification for the reviewer: users can optionally add an external
+filter list by URL. That downloaded file is DATA, not code. It is parsed
+into declarative rules and into arguments for scriptlets whose executable
+bodies are already bundled in the package. No downloaded content is ever
+evaluated as script, and no code is fetched from a remote server.
+```
+
+*Қашықтан код жүктелмейді. Қолданушы қосатын сүзгі тізімі — код емес,
+дерек. Оның ішіндегі жолдар пакеттегі дайын скрипттерге аргумент болып
+беріледі.*
 
 ---
 

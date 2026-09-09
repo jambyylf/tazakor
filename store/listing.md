@@ -3,29 +3,53 @@
 Бұл файлдағы мәтіндерді Chrome Web Store әзірлеуші панеліне көшіріп қою керек.
 Таңбалар саны Google қоятын шектеуге сай тексерілген.
 
+> **Маңызды.** Дүкен қысқа сипаттама ретінде манифесттегі `extShortDesc`
+> мәнін көрсетеді, төмендегі «Қысқа сипаттама» блоктары емес. Екеуі бірдей
+> болуы үшін мәтіндер `_locales/{kk,ru,en}/messages.json` файлдарымен
+> синхрондалған. Біреуін өзгертсеңіз, екіншісін де өзгертіңіз.
+
 ---
 
 ## Атауы (75 таңбаға дейін)
 
+Атау локаль файлдарындағы `extName` мәнінен келеді, сондықтан үш тілде де
+бөлек.
+
+### Қазақша
 ```
 ТазаКөр — жарнамасыз интернет
 ```
 
-## Қысқа сипаттама (132 таңбаға дейін)
-
-### Қазақша
-```
-Жарнаманы, трекерлерді және майнерлерді бұғаттайды. Толық қазақ тілді интерфейс. Ашық бастапқы код, GPLv3 лицензиясы.
-```
-
 ### Орысша
 ```
-Блокирует рекламу, трекеры и майнеры. Интерфейс на казахском и русском. Открытый исходный код, лицензия GPLv3.
+ТазаКөр — интернет без рекламы
 ```
 
 ### Ағылшынша
 ```
-Blocks ads, trackers and miners. Kazakh and Russian interface. Open source, GPLv3 licensed.
+TazaKor — ad-free internet
+```
+
+---
+
+## Қысқа сипаттама (132 таңбаға дейін)
+
+Форк екені осы жерде айтылады, себебі іздеу нәтижесінде және орнату
+терезесінде тек осы жол көрінеді.
+
+### Қазақша
+```
+Жарнаманы, трекерлерді және майнерлерді бұғаттайды. uBlock Origin Lite ашық кодына негізделген тәуелсіз форк.
+```
+
+### Орысша
+```
+Блокирует рекламу, трекеры и майнеры. Независимый форк открытого кода uBlock Origin Lite.
+```
+
+### Ағылшынша
+```
+Blocks ads, trackers and miners. An independent fork of the open-source uBlock Origin Lite.
 ```
 
 ---
@@ -35,9 +59,13 @@ Blocks ads, trackers and miners. Kazakh and Russian interface. Open source, GPLv
 ### Қазақша
 
 ```
-ТазаКөр — веб-беттердегі жарнаманы, бақылау трекерлерін және жасырын
-майнерлерді бұғаттайтын кеңейтім. Қазақстандағы қолданушыларға арналған,
-интерфейсі толықтай қазақ тілінде.
+ТазаКөр — Raymond Hill жазған uBlock Origin Lite жобасының ашық кодына
+негізделген тәуелсіз форк. Бұл uBlock Origin ЕМЕС. Түпнұсқа жобаның авторы
+бұл кеңейтімге қатысы жоқ және оны қолдамайды.
+
+ТазаКөр веб-беттердегі жарнаманы, бақылау трекерлерін және жасырын
+майнерлерді бұғаттайды. Қазақстандағы қолданушыларға арналған, интерфейсі
+толықтай қазақ тілінде.
 
 НЕГІЗГІ МҮМКІНДІКТЕР
 
@@ -46,46 +74,51 @@ Blocks ads, trackers and miners. Kazakh and Russian interface. Open source, GPLv
 • Үш сүзгілеу режимі: негізгі, оңтайлы және толық
 • Әр сайт үшін бөлек режим таңдау мүмкіндігі
 • Қалқымалы терезелерді бұғаттау
-• Қатаң бұғаттау: қауіпті сайттарға өтуді тоқтату
+• Қатаң бұғаттау: сүзгі тізімдерінде белгіленген сайттар ашылмас бұрын
+  ескерту беріледі
 • Бетте қалып қойған элементті қолмен жасыру құралы
 • Өз сүзгіңізді жазу мүмкіндігі
 
 СҮЗГІЛЕУ РЕЖИМДЕРІ
 
-Негізгі: тек желілік сұраныстарды бұғаттайды. Сайттардағы деректерді оқу
-рұқсатын талап етпейді.
+Негізгі: тек желілік сұраныстарды бұғаттайды, беттегі деректі оқымайды.
 
 Оңтайлы: желілік бұғаттауға қоса, беттегі жарнама орындарын жасырады.
 
-Толық: ең кең қорғаныс. Әдепкіде осы режим қосулы.
+Толық: барлық сайттарға рұқсат берілген жағдайда әдепкіде осы режим
+таңдалады. Рұқсат берілмесе, кеңейтім негізгі режимде жұмыс істейді.
+
+Кеңейтім орнатылғанда браузер барлық сайттарға рұқсат сұрайды, себебі
+әдепкі режим толық. Рұқсатты chrome://extensions бетінен кез келген уақытта
+тарылтуға болады.
 
 ҚҰПИЯЛЫҚ
 
-Кеңейтім ешқандай дербес деректі жинамайды, сақтамайды және ешкімге
-жібермейді. Қандай сайтқа кіргеніңіз тек өз браузеріңізде қалады.
-Талдау жүйелері мен жарнама желілері қолданылмайды.
+Кеңейтімнің сервері жоқ. Ол сізге қатысты дерек жинамайды және әзірлеушіге
+ештеңе жібермейді. Талдау жүйелері мен жарнама желілері қолданылмайды.
+
+Толық саясат: https://github.com/jambyylf/tazakor/blob/brand/store/privacy-policy.md
 
 АШЫҚ БАСТАПҚЫ КОД
 
-Толық бастапқы код ашық: https://github.com/jambyylf/tazakor
+Бүкіл код ашық: https://github.com/jambyylf/tazakor
 Лицензиясы: GNU General Public License v3.0
 
-БҰЛ — ФОРК
-
-ТазаКөр — Raymond Hill жазған uBlock Origin Lite жобасының өзгертілген
-нұсқасы. Бұл uBlock Origin ЕМЕС. Түпнұсқа жобаның авторы бұл кеңейтімге
-қатысы жоқ және оны қолдамайды. Кеңейтімге қатысты мәселелерді түпнұсқа
-жобаға емес, жоғарыдағы репозиторийге жазыңыз.
-
 Түпнұсқа жоба: https://github.com/gorhill/uBlock
+Кеңейтімге қатысты мәселелерді түпнұсқа жобаға емес, жоғарыдағы
+репозиторийге жазыңыз.
 ```
 
 ### Орысша
 
 ```
-ТазаКөр — расширение, которое блокирует рекламу, трекеры слежки и скрытые
-майнеры на веб-страницах. Создано для пользователей в Казахстане,
-интерфейс доступен на казахском и русском языках.
+ТазаКөр — независимый форк открытого кода uBlock Origin Lite, автором
+которого является Raymond Hill. Это НЕ uBlock Origin. Автор оригинального
+проекта не имеет отношения к этому расширению и не поддерживает его.
+
+ТазаКөр блокирует рекламу, трекеры слежки и скрытые майнеры на веб-страницах.
+Создано для пользователей в Казахстане, интерфейс доступен на казахском и
+русском языках.
 
 ОСНОВНЫЕ ВОЗМОЖНОСТИ
 
@@ -94,43 +127,47 @@ Blocks ads, trackers and miners. Kazakh and Russian interface. Open source, GPLv
 • Три режима фильтрации: базовый, оптимальный и полный
 • Отдельный режим для каждого сайта
 • Блокировка всплывающих окон
-• Строгая блокировка потенциально опасных сайтов
+• Строгая блокировка: предупреждение перед открытием сайтов, отмеченных в
+  списках фильтров
 • Инструмент для скрытия оставшихся элементов вручную
 • Возможность писать собственные фильтры
 
 РЕЖИМЫ ФИЛЬТРАЦИИ
 
-Базовый: блокирует только сетевые запросы. Не требует доступа к данным
-на сайтах.
+Базовый: блокирует только сетевые запросы, не читает содержимое страниц.
 
 Оптимальный: дополнительно скрывает рекламные блоки на странице.
 
-Полный: максимальная защита. Включён по умолчанию.
+Полный: выбирается по умолчанию, если предоставлен доступ ко всем сайтам.
+Без такого доступа расширение работает в базовом режиме.
+
+При установке браузер запрашивает доступ ко всем сайтам, поскольку режим по
+умолчанию полный. Доступ можно ограничить на странице chrome://extensions.
 
 КОНФИДЕНЦИАЛЬНОСТЬ
 
-Расширение не собирает, не хранит и никому не передаёт персональные
-данные. История посещений остаётся только в вашем браузере. Аналитика и
-рекламные сети не используются.
+У расширения нет сервера. Оно не собирает данные о вас и ничего не отправляет
+разработчику. Аналитика и рекламные сети не используются.
+
+Полная политика: https://github.com/jambyylf/tazakor/blob/brand/store/privacy-policy.md
 
 ОТКРЫТЫЙ ИСХОДНЫЙ КОД
 
-Полный исходный код: https://github.com/jambyylf/tazakor
+Весь код открыт: https://github.com/jambyylf/tazakor
 Лицензия: GNU General Public License v3.0
 
-ЭТО ФОРК
-
-ТазаКөр — изменённая версия проекта uBlock Origin Lite, автор которого
-Raymond Hill. Это НЕ uBlock Origin. Автор оригинального проекта не имеет
-отношения к этому расширению и не поддерживает его. Сообщения о проблемах
-направляйте не в оригинальный проект, а в репозиторий выше.
-
 Оригинальный проект: https://github.com/gorhill/uBlock
+Сообщения о проблемах направляйте не в оригинальный проект, а в репозиторий
+выше.
 ```
 
 ### Ағылшынша
 
 ```
+TazaKor is an independent fork of the open-source uBlock Origin Lite by
+Raymond Hill. This is NOT uBlock Origin. The author of the original project
+is not affiliated with this extension and does not endorse it.
+
 TazaKor blocks ads, tracking scripts and hidden miners on web pages. It is
 built for users in Kazakhstan and ships with a complete Kazakh interface.
 
@@ -141,38 +178,37 @@ FEATURES
 • Three filtering modes: basic, optimal and complete
 • Per-site filtering mode
 • Pop-up blocking
-• Strict blocking for potentially harmful sites
+• Strict blocking: warns before opening sites flagged by the enabled filter
+  lists
 • Element picker for hiding leftovers by hand
 • Support for your own custom filters
 
 FILTERING MODES
 
-Basic blocks network requests only and does not require permission to read
-data on websites.
+Basic blocks network requests only and does not read page content.
 
 Optimal additionally hides ad placeholders on the page.
 
-Complete offers the broadest protection and is enabled by default.
+Complete is selected by default when access to all sites has been granted.
+Without that access the extension runs in basic mode.
+
+At installation the browser asks for access to all sites, because the default
+mode is complete. Access can be narrowed from chrome://extensions at any time.
 
 PRIVACY
 
-The extension collects no personal data, stores none and sends none to
-anyone. Your browsing stays in your own browser. No analytics, no ad
-networks.
+The extension has no server. It collects nothing about you and sends nothing
+to the developer. No analytics, no ad networks.
+
+Full policy: https://github.com/jambyylf/tazakor/blob/brand/store/privacy-policy.md
 
 OPEN SOURCE
 
 Full source code: https://github.com/jambyylf/tazakor
 License: GNU General Public License v3.0
 
-THIS IS A FORK
-
-TazaKor is a modified version of uBlock Origin Lite by Raymond Hill. This
-is NOT uBlock Origin. The author of the original project is not affiliated
-with this extension and does not endorse it. Please report issues to the
-repository above, not to the upstream project.
-
 Upstream project: https://github.com/gorhill/uBlock
+Please report issues to the repository above, not to the upstream project.
 ```
 
 ---

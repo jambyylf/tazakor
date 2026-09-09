@@ -1,0 +1,47 @@
+name: Сайттағы мәселе туралы хабарлау
+description: Белгілі бір сайтта жарнама өтіп кетті немесе сайт бұзылды
+title: "[сайт]: мәселенің қысқаша сипаты"
+labels: ["site-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Бұл форманы ТазаКөр кеңейтімінің «Мәселе туралы хабарлау» түймесі
+        автоматты түрде толтырады. Қолмен де толтыруға болады.
+
+        Жіберер алдында төмендегі өрістерді қарап шығыңыз. Онда беттің
+        мекенжайы мен кеңейтімнің баптаулары болады. Жарияланбауы тиіс
+        нәрсе болса, өшіріңіз.
+  - type: input
+    id: url_address_of_the_web_page
+    attributes:
+      label: Беттің мекенжайы
+      description: Мәселе байқалған беттің толық мекенжайы
+      placeholder: https://example.kz/page
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: Мәселенің түрі
+      description: >
+        Кеңейтім автоматты түрде толтырады. Мәні қолданушының тіліне
+        байланысты, сондықтан бекітілген тізім емес, еркін өріс.
+      placeholder: Жарнама бұғатталмады
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Не болды
+      description: Не күттіңіз, не болды. Скриншот қосуға болады.
+    validations:
+      required: false
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Баптаулар
+      description: Кеңейтім автоматты түрде толтырады. Жіберер алдында қарап шығыңыз.
+      render: yaml
+    validations:
+      required: false
