@@ -36,17 +36,56 @@ The following assumes a Linux environment with `node` (17.5.0 or above),
 1. Open a Bash console
 2. `git clone https://github.com/jambyylf/tazakor.git`
 3. `cd tazakor`
-4. `git checkout brand`
+4. `git checkout v1.0.0`   (the exact commit this package was built from)
 5. `git submodule init`
 6. `git submodule update`
 7. `mkdir -p dist/build/mv3-data`
-8. `bash tools/make-mv3.sh chromium`
+8. `bash tools/make-mv3.sh chromium 1.0.0`
+9. `python tools/make-store-zip.py`
+
+Step 8 must be given the version number. Without it the script produces a
+local development build: it appends the `declarativeNetRequestFeedback`
+permission and keeps `rulesets/debug`, neither of which is present in the
+submitted package.
 
 The build downloads filter lists from their respective remote servers, then
 converts them into declarative rulesets.
 
-Upon completion, the resulting extension package will be present in
-`dist/build/uBOLite.chromium`.
+Step 9 produces `dist/tazakor-<version>-chromium.zip`, which is the submitted
+artifact. It excludes `log.txt` and verifies that `manifest.json` sits at the
+archive root and that no development-only permission survived. The equivalent
+without the script is:
+
+    cd dist/build/uBOLite.chromium && zip -r -X ../../tazakor-1.0.0-chromium.zip . -x log.txt
+
+Upon completion, the unpacked extension is in `dist/build/uBOLite.chromium`.
+
+## Reproducibility note
+
+`rulesets/*.json` are generated from filter lists fetched over the network at
+build time. Those lists change upstream, so a rebuild on a later date produces
+different rule contents and a different rule count. Everything else in the
+package is byte-reproducible from the tagged commit.
+
+## Remote code
+
+The extension executes no remote code. All executable code, including every
+scriptlet body, ships inside the package. The declarative rulesets are static
+JSON produced at build time.
+
+Users may optionally add an external filter list by URL. That downloaded file
+is data, not code: it is parsed into declarative rules and into string
+arguments for scriptlets that are already bundled. Downloaded content is never
+evaluated as script.
+
+## Third-party bundle
+
+`lib/codemirror/cm6.bundle.ubol.min.js` is a minified CodeMirror 6 bundle used
+by the in-extension filter editor. It is not obfuscated. It is produced from
+the `platform/mv3/extension/lib/codemirror/codemirror-ubol` submodule, which is
+pinned in this repository, by running `make ubol.bundle` inside that directory.
+The unminified `cm6.bundle.ubol.js` is generated alongside it by the same
+command.
 
 ## Notes
 

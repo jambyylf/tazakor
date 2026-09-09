@@ -1,86 +1,106 @@
 # ТазаКөр — Құпиялық саясаты
 
+**Қолданылады:** ТазаКөр (TazaKor) браузер кеңейтіміне, Chrome Web Store нұсқасына
+**Жариялаушы:** jambyylf
+**Байланыс:** <!-- ТОЛТЫРЫҢЫЗ: электрондық пошта -->
+**Мәселе хабарлау:** <https://github.com/jambyylf/tazakor/issues>
 **Соңғы жаңартылған күні:** 2026-09-09
 
 ---
 
 ## Қысқаша
 
-ТазаКөр ешқандай дербес деректі жинамайды, сақтамайды және ешкімге
-жібермейді.
+Кеңейтімнің сервері жоқ. Ол сізге қатысты ешқандай дерек жинамайды және
+әзірлеушіге ештеңе жібермейді. Төменде не сақталатыны және желіге қашан
+шығатыны толық жазылған.
 
 ---
 
-## Толық түсіндірме
+## 1. Не жиналмайды
 
-### Не жиналмайды
+Кеңейтім төмендегілерді жинамайды және жібермейді:
 
-Кеңейтім төмендегілердің ешқайсысын жинамайды:
-
-- Аты-жөні, электрондық пошта немесе басқа да дербес мәлімет
-- Қай сайттарға кіргеніңіз туралы дерек
-- Іздеу сұраныстары немесе беттегі мазмұн
+- Аты-жөні, электрондық пошта немесе басқа дербес мәлімет
+- Шолу тарихы, яғни қай сайттарға кіргеніңіз
+- Іздеу сұраныстары
 - IP-мекенжай немесе орналасқан жер
 - Құрылғы туралы мәлімет
 - Кеңейтімді қалай пайдаланғаныңыз туралы статистика
 
-Кеңейтімде талдау жүйелері (analytics), жарнама желілері және кез келген
-телеметрия жоқ.
+Кеңейтімде талдау жүйелері (analytics), жарнама желілері және телеметрия жоқ.
 
-### Не сақталады және қайда
+## 2. Не сақталады және қайда
 
-Кеңейтім тек сіздің браузеріңіздің жергілікті жадында мыналарды сақтайды:
+Браузеріңіздің жергілікті жадында мыналар сақталады:
 
-- Таңдаған сүзгілеу режимі
+- Таңдалған әдепкі сүзгілеу режимі
 - Әр сайт үшін бөлек қойылған режимдер
 - Қосулы сүзгі тізімдерінің тізбесі
 - Өзіңіз жазған сүзгілер
+- Өзіңіз қосқан сыртқы сүзгі тізімдерінің сілтемелері және жүктелген мазмұны
 
-Бұл деректер сіздің құрылғыңызда қалады. Оларды әзірлеуші де, үшінші
-тарап та көре алмайды.
+Бұл деректер сіздің құрылғыңызда қалады. Кеңейтімнің сервері жоқ, сондықтан
+әзірлеуші оларды ала алмайды.
 
-Егер браузеріңізде синхрондау қосулы болса, Google өз саясатына сай осы
-баптауларды құрылғыларыңыз арасында синхрондауы мүмкін. Бұл браузердің
-функциясы, кеңейтімнің емес.
+Браузерде синхрондау қосулы болса, Google өз саясатына сай осы баптауларды
+құрылғыларыңыз арасында синхрондауы мүмкін. Бұл браузердің функциясы,
+кеңейтімнің емес.
 
-### Интернетке шығу
+## 3. Кеңейтім желіге қашан шығады
 
-Сүзгі ережелері кеңейтімнің өз ішінде дайын күйде келеді. Қалыпты
-жұмыс кезінде кеңейтім ешқандай серверге сұраныс жібермейді.
+Сүзгі ережелері кеңейтімнің өз ішінде дайын күйде келеді. Қалыпты жұмыс
+кезінде кеңейтім ешқандай серверге сұраныс жібермейді.
 
-Жалғыз ерекшелік: егер сіз баптаулардан өз бетіңізше сыртқы сүзгі тізімін
-сілтеме арқылы қоссаңыз, кеңейтім сол сілтемеден файлды жүктейді. Бұл тек
-сіз нақты әрекет жасағанда ғана болады, әрі сұраныс тек сіз көрсеткен
+Екі жағдайда ғана желіге шығады.
+
+**Сыртқы сүзгі тізімі.** Егер сіз баптаулардан сыртқы сүзгі тізімін сілтеме
+арқылы қоссаңыз, кеңейтім сол сілтемеден файлды жүктейді. Тізім қосулы
+тұрғанда оны мерзімді түрде қайта жүктеп отырады, әдепкіде шамамен жеті
+күнде бір рет. Бұл жаңартулар сіз әр жолы басқаннан кейін емес, өздігінен
+жүреді. Тізімді өшірсеңіз, жүктеу де тоқтайды. Сұраныс тек сіз көрсеткен
 мекенжайға жіберіледі.
 
-### Беттегі мазмұнға қол жеткізу
+**Мәселе туралы хабарлау.** Қалқымалы терезедегі «Мәселе туралы хабарлау»
+түймесін бассаңыз, кеңейтім GitHub сайтындағы форманы алдын ала толтырылған
+күйде ашады. Онда ағымдағы беттің мекенжайы, сол сайтқа қойылған режим және
+қосулы сүзгі тізімдері болады. Форма ашылғанда бұл мәліметтер GitHub
+серверіне жіберіледі. Хабарлама жарияланбас бұрын оны өзіңіз көріп, өңдей
+аласыз немесе бас тарта аласыз. Түймені баспасаңыз, ешнәрсе жіберілмейді.
+
+## 4. Беттегі мазмұнға қол жеткізу
 
 «Толық» және «оңтайлы» режимдерде кеңейтім беттің мазмұнын оқып, жарнама
-элементтерін жасырады. Бұл толықтай сіздің браузеріңіздің ішінде жүреді.
-Беттің мазмұны ешқайда жіберілмейді және сақталмайды.
+элементтерін жасырады. Сондай-ақ сүзгі тізімдерінде көрсетілген шағын
+скрипттерді бетте орындауы мүмкін, бұл жарнама бұғаттауға кедергі келтіретін
+кодты бейтараптандыру үшін керек. Скрипттерді орындау мүмкіндігі әдепкіде
+сөндірулі, оны браузер баптауларынан өзіңіз қосуыңыз керек.
+
+Мұның бәрі толықтай сіздің браузеріңіздің ішінде жүреді. Беттің мазмұны
+ешқайда жіберілмейді және сақталмайды.
 
 «Негізгі» режим беттегі деректі мүлдем оқымайды.
 
-### Деректерді үшінші тарапқа беру
+Ескерту: кеңейтім орнатылғанда браузер барлық сайттарға рұқсат сұрайды,
+себебі әдепкі режим толық. Рұқсатты `chrome://extensions` бетінен кез келген
+уақытта тарылтуға болады.
 
-Берілмейді. Берілетін дерек жоқ.
+## 5. Деректерді үшінші тарапқа беру
 
-### Балалар
+Кеңейтім деректі ешкімге сатпайды және таратпайды. Үшінші бөлімде
+сипатталған екі жағдайда ғана дерек сіздің әрекетіңізбен сыртқа шығады:
+өзіңіз көрсеткен сүзгі тізімінің серверіне және өзіңіз ашқан GitHub
+формасына.
+
+## 6. Балалар
 
 Кеңейтім жас шектеуіне қарамастан ешкімнен дерек жинамайды.
 
-### Өзгерістер
+## 7. Өзгерістер
 
-Осы саясат өзгерсе, жаңа нұсқасы төмендегі репозиторийде жарияланады да,
-жоғарыдағы күн жаңартылады.
+Саясат өзгерсе, жаңа нұсқасы осы репозиторийде жарияланады да, жоғарыдағы
+күн жаңартылады.
 
-### Байланыс
-
-Сұрақтар мен мәселелер: <https://github.com/jambyylf/tazakor/issues>
-
----
-
-## Бастапқы код
+## 8. Бастапқы код
 
 Кеңейтімнің бүкіл коды ашық, оны кез келген адам тексере алады:
 <https://github.com/jambyylf/tazakor>
@@ -89,63 +109,183 @@
 
 ---
 
+# ТазаКөр — Политика конфиденциальности
+
+**Применяется к:** браузерному расширению ТазаКөр (TazaKor), версия в Chrome Web Store
+**Издатель:** jambyylf
+**Контакт:** <!-- ЗАПОЛНИТЬ: адрес электронной почты -->
+**Сообщить о проблеме:** <https://github.com/jambyylf/tazakor/issues>
+**Дата последнего обновления:** 2026-09-09
+
+## Кратко
+
+У расширения нет сервера. Оно не собирает никаких данных о вас и ничего не
+отправляет разработчику. Ниже подробно описано, что сохраняется и когда
+расширение обращается к сети.
+
+## 1. Что не собирается
+
+Расширение не собирает и не передаёт имя, адрес электронной почты, историю
+посещений, поисковые запросы, IP-адрес, местоположение, сведения об
+устройстве и статистику использования. В нём нет аналитики, рекламных сетей
+и телеметрии.
+
+## 2. Что сохраняется и где
+
+В локальном хранилище браузера сохраняются: выбранный режим фильтрации по
+умолчанию, режимы для отдельных сайтов, список включённых фильтров, ваши
+собственные фильтры, а также адреса добавленных вами внешних списков
+фильтров и их загруженное содержимое.
+
+Эти данные остаются на вашем устройстве. У расширения нет сервера, поэтому
+разработчик не может их получить.
+
+Если в браузере включена синхронизация, Google может синхронизировать эти
+настройки между вашими устройствами согласно собственной политике. Это
+функция браузера, а не расширения.
+
+## 3. Когда расширение обращается к сети
+
+Правила фильтрации входят в состав пакета расширения. При обычной работе
+расширение не отправляет запросов ни на какие серверы.
+
+**Внешний список фильтров.** Если вы сами добавите внешний список по ссылке,
+расширение загрузит файл по этому адресу. Пока список включён, расширение
+периодически перезагружает его, по умолчанию примерно раз в семь дней. Эти
+обновления происходят автоматически, а не по каждому вашему действию. Если
+отключить список, загрузки прекращаются. Запрос отправляется только по
+указанному вами адресу.
+
+**Сообщение о проблеме.** При нажатии кнопки «Сообщить о проблеме»
+расширение открывает предзаполненную форму на GitHub. В неё входят адрес
+текущей страницы, режим для этого сайта и список включённых фильтров. В
+момент открытия формы эти сведения передаются на сервер GitHub. До
+публикации вы можете просмотреть и отредактировать сообщение или отказаться
+от него. Если кнопку не нажимать, ничего не отправляется.
+
+## 4. Доступ к содержимому страниц
+
+В режимах «полный» и «оптимальный» расширение читает содержимое страницы,
+чтобы скрыть рекламные элементы. Оно также может выполнять на странице
+небольшие скрипты, указанные в списках фильтров, чтобы нейтрализовать код,
+мешающий блокировке рекламы. Выполнение скриптов по умолчанию отключено и
+включается вами в настройках браузера.
+
+Всё это происходит внутри вашего браузера. Содержимое страниц никуда не
+передаётся и не сохраняется.
+
+Режим «базовый» вообще не читает содержимое страниц.
+
+Обратите внимание: при установке браузер запрашивает доступ ко всем сайтам,
+поскольку режим по умолчанию полный. Доступ можно в любой момент ограничить
+на странице `chrome://extensions`.
+
+## 5. Передача третьим лицам
+
+Расширение не продаёт и не распространяет данные. Данные покидают устройство
+только в двух случаях, описанных в разделе 3, и только по вашему действию.
+
+## 6. Дети
+
+Расширение не собирает данные ни от кого, независимо от возраста.
+
+## 7. Изменения
+
+При изменении политики новая версия публикуется в этом репозитории, а дата
+выше обновляется.
+
+## 8. Исходный код
+
+Весь код открыт: <https://github.com/jambyylf/tazakor>
+
+Лицензия: GNU General Public License v3.0
+
+---
+
 # TazaKor — Privacy Policy
 
+**Applies to:** the TazaKor (ТазаКөр) browser extension, Chrome Web Store listing
+**Publisher:** jambyylf
+**Contact:** <!-- FILL IN: email address -->
+**Report an issue:** <https://github.com/jambyylf/tazakor/issues>
 **Last updated:** 2026-09-09
 
 ## Summary
 
-TazaKor collects no personal data, stores none, and transmits none.
+The extension has no server. It collects nothing about you and sends nothing
+to the developer. What is stored, and when the extension touches the network,
+is described in full below.
 
-## What is not collected
+## 1. What is not collected
 
-The extension does not collect your name, email address, browsing history,
-search queries, page content, IP address, location, device information, or
-usage statistics. It contains no analytics, no advertising networks and no
-telemetry of any kind.
+The extension does not collect or transmit your name, email address, browsing
+history, search queries, IP address, location, device information, or usage
+statistics. It contains no analytics, no advertising networks and no
+telemetry.
 
-## What is stored, and where
+## 2. What is stored, and where
 
-The extension stores the following in your browser's local storage only:
-your chosen filtering mode, per-site filtering modes, the list of enabled
-filter lists, and any custom filters you write. This data stays on your
-device. Neither the developer nor any third party can read it.
+The following is kept in your browser's local storage: the chosen default
+filtering mode, per-site filtering modes, the list of enabled filter lists,
+any custom filters you write, and the URLs of external filter lists you add
+together with their downloaded contents.
 
-If browser sync is enabled, Google may synchronise these settings across
-your devices under its own policy. That is a browser feature, not a feature
-of this extension.
+This data stays on your device. The extension has no server, so the developer
+cannot obtain it.
 
-## Network access
+If browser sync is enabled, Google may synchronise these settings across your
+devices under its own policy. That is a browser feature, not a feature of
+this extension.
+
+## 3. When the extension uses the network
 
 Filter rules ship inside the extension package. During normal operation the
 extension makes no requests to any server.
 
-The only exception: if you add an external filter list by URL yourself, the
-extension downloads that file from the address you provided. This happens
-only as a result of your explicit action.
+**External filter lists.** If you add an external list by URL yourself, the
+extension downloads that file. While the list stays enabled it re-downloads
+it periodically, by default roughly every seven days. These refreshes happen
+on their own, not per user action. Disabling the list stops them. Requests go
+only to the address you supplied.
 
-## Page content access
+**Reporting an issue.** Pressing "Report an issue" in the popup opens a
+prefilled form on GitHub. It includes the current page URL, the filtering
+mode for that site, and the enabled filter lists. Those details reach
+GitHub's servers when the form opens. You can review, edit or abandon the
+report before publishing it. If you do not press the button, nothing is sent.
 
-In the complete and optimal filtering modes the extension reads page
-content in order to hide advertising elements. This happens entirely inside
-your browser. Page content is never transmitted or stored.
+## 4. Access to page content
 
-The basic filtering mode does not read page content at all.
+In the complete and optimal modes the extension reads page content in order
+to hide advertising elements. It may also run small scripts specified by the
+filter lists inside the page, to neutralise code that interferes with ad
+blocking. Running such scripts is off by default and is enabled by you in the
+browser's settings.
 
-## Sharing with third parties
+All of this happens inside your browser. Page content is never transmitted or
+stored.
 
-None. There is no data to share.
+The basic mode does not read page content at all.
 
-## Changes
+Note: at installation the browser asks for access to all sites, because the
+default mode is complete. Access can be narrowed at any time from
+`chrome://extensions`.
 
-If this policy changes, the updated version will be published in the
-repository below and the date above will be updated.
+## 5. Sharing with third parties
 
-## Contact
+The extension does not sell or distribute data. Data leaves the device only
+in the two cases described in section 3, and only through your own action.
 
-Questions and issues: <https://github.com/jambyylf/tazakor/issues>
+## 6. Children
 
-## Source code
+The extension collects no data from anyone, regardless of age.
+
+## 7. Changes
+
+If this policy changes, the updated version is published in this repository
+and the date above is updated.
+
+## 8. Source code
 
 The complete source code is public and auditable:
 <https://github.com/jambyylf/tazakor>

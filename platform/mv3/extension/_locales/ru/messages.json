@@ -4,7 +4,7 @@
     "description": "extension name."
   },
   "extShortDesc": {
-    "message": "Эффективный блокировщик веб-элементов. Сразу после установки блокирует рекламу, трекеры, майнеры и многое другое.",
+    "message": "Блокирует рекламу, трекеры и майнеры. Независимый форк открытого кода uBlock Origin Lite.",
     "description": "this will be in the Chrome web store: must be 132 characters or less"
   },
   "perRulesetStats": {
@@ -152,7 +152,7 @@
     "description": "Header of 'Report a filter issue' section in Support pane"
   },
   "supportS3P1": {
-    "message": "Сообщайте о проблемах с фильтрами на определённых сайтах в <span data-url=\"https://github.com/uBlockOrigin/uAssets/issues?q=is%3Aissue\">трекер ошибок <code>uBlockOrigin/uAssets</code></span>. <u>Требуется учётная запись в GitHub.</u>",
+    "message": "Сообщайте о проблемах с фильтрами на определённых сайтах в <span data-url=\"https://github.com/jambyylf/tazakor/issues?q=is%3Aissue\">трекер ошибок <code>jambyylf/tazakor</code></span>. <u>Требуется учётная запись в GitHub.</u>",
     "description": "First paragraph of 'Filter issues' section in Support pane"
   },
   "supportS5H": {

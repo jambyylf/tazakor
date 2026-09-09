@@ -74,10 +74,10 @@ li:before{content:'';position:absolute;left:0;top:9px;width:22px;height:22px;bor
   <div class="card"><div class="n">02</div><h3>Оңтайлы</h3>
     <p>Желілік бұғаттауға қоса, беттегі жарнама орындарын жасырады.</p></div>
   <div class="card on"><div class="n">03</div><h3>Толық</h3>
-    <p>Ең кең қорғаныс. Барлық жарнама элементтерін жояды.</p>
-    <span class="badge">әдепкі</span></div>
+    <p>Барлық сайттарға рұқсат берілген жағдайда осы режим таңдалады.</p>
+    <span class="badge">рұқсат берілсе — әдепкі</span></div>
 </div>
-<div class="foot">Режимді әр сайт үшін бөлек таңдауға болады</div>""",
+<div class="foot">Рұқсат берілмесе, кеңейтім негізгі режимде жұмыс істейді</div>""",
     }
 
 
