@@ -298,7 +298,11 @@ async function updateStrictBlockRules(currentRules, addRules, removeRuleIds) {
     }
     const rulesets = await Promise.all(toFetch);
 
-    const substitution = `${runtime.getURL('/strictblock.html')}#\\0`;
+    // ТазаКөр: бұл бет use_dynamic_url арқылы бөлек origin-де ашылады,
+    // сондықтан таңдалған тілді URL арқылы жеткіземіз.
+    const uiLang = rulesetConfig.uiLanguage || '';
+    const langQuery = /^[a-z]{2}(_[A-Za-z]+)?$/.test(uiLang) ? `?lang=${uiLang}` : '';
+    const substitution = `${runtime.getURL('/strictblock.html')}${langQuery}#\\0`;
     const allRules = [];
     for ( const rules of rulesets ) {
         if ( Array.isArray(rules) === false ) { continue; }
