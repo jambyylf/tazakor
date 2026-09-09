@@ -13,7 +13,12 @@ jobs:
       contents: write # for creating release
     name: Build packages
     runs-on: ubuntu-slim
-    if: startsWith(github.ref, 'refs/tags/')
+    # ТазаКөр: бұл түпнұсқаның релиз жүйесі. Ол uBlock Origin (MV2)
+    # пакеттерін жасап, gorhill/uBlock репозиторийіне жүктейді, әрі
+    # бізде жоқ ubuntu-slim серверін талап етеді. Форкта тег қойылса,
+    # жұмыс мәңгі кезекте тұрып қалар еді. Сондықтан тек түпнұсқада
+    # ғана іске қосылатын етіп шектелген.
+    if: startsWith(github.ref, 'refs/tags/') && github.repository == 'gorhill/uBlock'
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
