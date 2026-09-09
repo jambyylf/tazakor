@@ -117,9 +117,12 @@ The extension does not collect, store or transmit any browsing data. Page
 access is used solely to apply cosmetic filtering rules locally, inside the
 user's browser.
 
-Users who prefer not to grant this access can switch to the basic filtering
-mode, which requires no host permissions at all. The extension automatically
-falls back to the basic mode when broad access has not been granted.
+Because complete filtering is the default, this access is granted at
+installation and Chrome shows "Read and change all your data on all
+websites". Users who prefer less access can narrow site access at any time
+from chrome://extensions. When broad access is not available the extension
+automatically falls back to basic filtering, which uses declarative rules
+only and reads no page content.
 ```
 
 *Толық режим барлық сайттағы мазмұнды өзгертуді талап етеді. Рұқсат
@@ -129,23 +132,36 @@ falls back to the basic mode when broad access has not been granted.
 
 ## Remote code декларациясы
 
-Панельдегі сұрақ: «Are you using remote code?» Жауап: **Жоқ, қолданбаймыз.**
-Түсіндірмесі:
+Панельдегі сұрақ: «Are you using remote code?»
+
+Ұсынылатын жауап: **Иә**, содан соң төмендегі түсіндірме. «Жоқ» деп жауап
+беру де қисынды, себебі жүктелетін файл орындалатын код емес, дерек. Бірақ
+модератор оны басқаша бағалауы мүмкін, ал жалған «жоқ» саясат бұзушылығы
+болып саналады. Ашық түсіндіріп, «иә» деген қауіпсіздеу.
 
 ```
-No. All executable code ships inside the package. The declarative rulesets
-are static JSON generated at build time and bundled with the extension.
+Yes, with an important qualification.
 
-One clarification for the reviewer: users can optionally add an external
-filter list by URL. That downloaded file is DATA, not code. It is parsed
-into declarative rules and into arguments for scriptlets whose executable
-bodies are already bundled in the package. No downloaded content is ever
-evaluated as script, and no code is fetched from a remote server.
+All executable code ships inside the package. Every scriptlet body, every
+content script and the entire filtering engine are bundled; nothing
+executable is fetched at runtime.
+
+The qualification: a user may optionally add an external filter list by
+URL. The extension then downloads that file, and while the list stays
+enabled it refreshes it periodically (roughly every seven days by default).
+
+That downloaded file is filter-list text, not script. It is parsed into
+declarative net-request rules, CSS selectors, and string arguments passed
+to scriptlets that are already present in the package. Downloaded content
+is never evaluated as code.
+
+No external list is configured out of the box, so a default installation
+fetches nothing at all.
 ```
 
-*Қашықтан код жүктелмейді. Қолданушы қосатын сүзгі тізімі — код емес,
-дерек. Оның ішіндегі жолдар пакеттегі дайын скрипттерге аргумент болып
-беріледі.*
+*Пакетте орындалатын кодтың бәрі дайын тұр. Қолданушы өзі қосқан сүзгі
+тізімі ғана жүктеледі, ал ол код емес, дерек. Әдепкі күйде ешқандай сыртқы
+тізім жоқ.*
 
 ---
 
