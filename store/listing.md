@@ -70,7 +70,8 @@ Blocks ads, trackers and miners. An independent fork of the open-source uBlock O
 НЕГІЗГІ МҮМКІНДІКТЕР
 
 • Жарнама, трекер және майнер бұғаттау
-• Толықтай қазақ тілді интерфейс, орыс және ағылшын тілдері де бар
+• Толықтай қазақ тілді интерфейс. Баптаулардан орысшаға немесе
+  ағылшыншаға ауыстыруға болады
 • Үш сүзгілеу режимі: негізгі, оңтайлы және толық
 • Әр сайт үшін бөлек режим таңдау мүмкіндігі
 • Қалқымалы терезелерді бұғаттау
@@ -91,6 +92,15 @@ Blocks ads, trackers and miners. An independent fork of the open-source uBlock O
 Кеңейтім орнатылғанда браузер барлық сайттарға рұқсат сұрайды, себебі
 әдепкі режим толық. Рұқсатты chrome://extensions бетінен кез келген уақытта
 тарылтуға болады.
+
+ИНТЕРФЕЙС ТІЛІ
+
+Кеңейтім әдепкіде қазақша сөйлейді. Оны баптаулардан орысшаға немесе
+ағылшыншаға ауыстыруға болады.
+
+Мұның себебі бар: Chrome браузерінде қазақ тілі мүлдем жоқ, сондықтан
+кеңейтім тілді өзі басқарады. Chrome-ның кеңейтімдер тізімінде атау
+браузердің тілінде қала береді, оны өзгерту мүмкін емес.
 
 ҚҰПИЯЛЫҚ
 
@@ -144,6 +154,15 @@ Blocks ads, trackers and miners. An independent fork of the open-source uBlock O
 При установке браузер запрашивает доступ ко всем сайтам, поскольку режим по
 умолчанию полный. Доступ можно ограничить на странице chrome://extensions.
 
+ЯЗЫК ИНТЕРФЕЙСА
+
+По умолчанию расширение работает на казахском языке. В настройках можно
+переключить его на русский или английский.
+
+Причина: в Chrome вообще нет казахского языка интерфейса, поэтому
+расширение управляет языком самостоятельно. В списке расширений Chrome
+название остаётся на языке браузера, это изменить нельзя.
+
 КОНФИДЕНЦИАЛЬНОСТЬ
 
 У расширения нет сервера. Оно не собирает данные о вас и ничего не отправляет
@@ -194,6 +213,15 @@ Without that access the extension runs in basic mode.
 
 At installation the browser asks for access to all sites, because the default
 mode is complete. Access can be narrowed from chrome://extensions at any time.
+
+INTERFACE LANGUAGE
+
+The interface is in Kazakh by default. You can switch it to Russian or
+English in the settings.
+
+The reason: Chrome does not offer Kazakh as an interface language at all,
+so the extension manages its own. The extension name shown in Chrome's own
+extension list stays in the browser's language and cannot be changed.
 
 PRIVACY
 
