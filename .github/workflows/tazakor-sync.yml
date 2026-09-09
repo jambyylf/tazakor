@@ -1,0 +1,195 @@
+# ТазаКөр: түпнұсқа gorhill/uBlock жобасынан жаңалықтарды апта сайын тартып,
+# кеңейтімді қайта құрастырып, дайын zip файлын artifact ретінде сақтайды.
+# Конфликт шықса, репозиторийде issue ашылады да, жұмыс сәтсіз деп белгіленеді.
+
+name: Апталық синхрондау және құрастыру
+
+on:
+  schedule:
+    # Әр дүйсенбі 03:00 UTC (Алматы уақытымен 08:00)
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: tazakor-sync
+  cancel-in-progress: false
+
+env:
+  UPSTREAM: https://github.com/gorhill/uBlock.git
+  BASE_BRANCH: brand
+  SYNC_BRANCH: auto/upstream-sync
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Репозиторийді алу
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.BASE_BRANCH }}
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Git баптау
+        run: |
+          git config user.name  "tazakor-bot"
+          git config user.email "tazakor-bot@users.noreply.github.com"
+
+      - name: Түпнұсқаны қосу және тарту
+        run: |
+          git remote add upstream "$UPSTREAM" 2>/dev/null || \
+            git remote set-url upstream "$UPSTREAM"
+          git fetch --no-tags upstream master
+
+      - name: Жаңа commit бар ма
+        id: check
+        run: |
+          AHEAD=$(git rev-list --count HEAD..upstream/master)
+          echo "ahead=$AHEAD" >> "$GITHUB_OUTPUT"
+          echo "Түпнұсқада **$AHEAD** жаңа commit бар." >> "$GITHUB_STEP_SUMMARY"
+          if [ "$AHEAD" -eq 0 ]; then
+            echo "Синхрондау қажет емес, жұмыс осымен бітеді." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Rebase жасау
+        id: rebase
+        if: steps.check.outputs.ahead != '0'
+        run: |
+          if git rebase upstream/master; then
+            echo "status=ok" >> "$GITHUB_OUTPUT"
+            echo "Rebase таза өтті." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          echo "status=conflict" >> "$GITHUB_OUTPUT"
+          git diff --name-only --diff-filter=U > /tmp/conflicts.txt || true
+          {
+            echo ""
+            echo "### Rebase кезінде конфликт шықты"
+            echo ""
+            echo '```'
+            cat /tmp/conflicts.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          git rebase --abort || true
+          exit 1
+
+      - name: Submodule-дерді жаңарту
+        if: steps.rebase.outputs.status == 'ok'
+        run: git submodule update --init --recursive
+
+      - name: Node орнату
+        if: steps.rebase.outputs.status == 'ok'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Құралдарды тексеру
+        if: steps.rebase.outputs.status == 'ok'
+        run: |
+          node --version
+          jq --version
+          command -v zip
+
+      - name: Кеңейтімді құрастыру
+        if: steps.rebase.outputs.status == 'ok'
+        run: |
+          mkdir -p dist/build/mv3-data
+          bash tools/make-mv3.sh chromium
+
+      - name: Брендингті және нәтижені тексеру
+        if: steps.rebase.outputs.status == 'ok'
+        run: |
+          DIR=dist/build/uBOLite.chromium
+          test -f "$DIR/manifest.json" || { echo "manifest.json табылмады"; exit 1; }
+          NAME=$(jq -r '.short_name' "$DIR/manifest.json")
+          VER=$(jq -r '.version' "$DIR/manifest.json")
+          SETS=$(jq '.declarative_net_request.rule_resources | length' "$DIR/manifest.json")
+          KKNAME=$(jq -r '.extName.message' "$DIR/_locales/kk/messages.json")
+          if [ "$NAME" != "ТазаКөр" ]; then
+            echo "Брендинг жоғалған: short_name='$NAME'"; exit 1
+          fi
+          echo "VERSION=$VER" >> "$GITHUB_ENV"
+          {
+            echo ""
+            echo "### Құрастыру сәтті"
+            echo ""
+            echo "| Көрсеткіш | Мән |"
+            echo "|---|---|"
+            echo "| Қысқа атауы | $NAME |"
+            echo "| Қазақша атауы | $KKNAME |"
+            echo "| Нұсқасы | $VER |"
+            echo "| Ережелер жиыны | $SETS |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Zip жасау
+        if: steps.rebase.outputs.status == 'ok'
+        run: |
+          rm -f dist/build/uBOLite.chromium/log.txt
+          ( cd dist/build/uBOLite.chromium && \
+            zip -r -q "$GITHUB_WORKSPACE/tazakor-chromium-$VERSION.zip" . )
+          ls -lh "tazakor-chromium-$VERSION.zip"
+
+      - name: Zip файлын artifact ретінде сақтау
+        if: steps.rebase.outputs.status == 'ok'
+        uses: actions/upload-artifact@v4
+        with:
+          name: tazakor-chromium-${{ env.VERSION }}
+          path: tazakor-chromium-*.zip
+          retention-days: 90
+          if-no-files-found: error
+
+      - name: Синхрондалған тармақты жіберу
+        if: steps.rebase.outputs.status == 'ok'
+        run: |
+          git push --force origin "HEAD:$SYNC_BRANCH"
+          {
+            echo ""
+            echo "Нәтиже \`$SYNC_BRANCH\` тармағына жіберілді."
+            echo "Жергілікті \`$BASE_BRANCH\` тармағын жаңарту үшін:"
+            echo ""
+            echo '```bash'
+            echo "git fetch origin $SYNC_BRANCH"
+            echo "git checkout $BASE_BRANCH"
+            echo "git reset --hard origin/$SYNC_BRANCH"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Конфликт туралы хабарлау
+        if: always() && steps.rebase.outputs.status == 'conflict'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          BODY=/tmp/issue-body.md
+          {
+            printf 'Апталық синхрондау `gorhill/uBlock` жобасының `master` тармағына rebase жасай алмады.\n'
+            printf 'Қайшылықты қолмен шешу керек.\n\n'
+            printf '**Қайшылықты файлдар:**\n\n'
+            printf '```\n'
+            cat /tmp/conflicts.txt 2>/dev/null || printf '(тізім алынбады)\n'
+            printf '```\n\n'
+            printf '**Қолмен шешу:**\n\n'
+            printf '```bash\n'
+            printf 'git fetch upstream master\n'
+            printf 'git checkout %s\n' "$BASE_BRANCH"
+            printf 'git rebase upstream/master\n'
+            printf '# қайшылықтарды түзетіңіз, содан соң:\n'
+            printf 'git rebase --continue\n'
+            printf 'bash tools/make-mv3.sh chromium\n'
+            printf '```\n\n'
+            printf 'Жұмыс журналы: %s\n' "$RUN_URL"
+          } > "$BODY"
+          TITLE="Түпнұсқамен синхрондау кезінде конфликт шықты"
+          NUM=$(gh issue list --state open --search "$TITLE in:title" \
+                  --json number --jq '.[0].number' 2>/dev/null || true)
+          if [ -n "$NUM" ]; then
+            gh issue comment "$NUM" --body-file "$BODY"
+            echo "Бар issue #$NUM жаңартылды." >> "$GITHUB_STEP_SUMMARY"
+          else
+            gh issue create --title "$TITLE" --body-file "$BODY"
+            echo "Жаңа issue ашылды." >> "$GITHUB_STEP_SUMMARY"
+          fi
