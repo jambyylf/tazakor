@@ -6,7 +6,28 @@ uBlock Origin Lite-қа ұқсайтынын және оның заңды еке
 
 Ағылшынша, өйткені модераторлар сол тілде оқиды.
 
+> **Өрістің шегі — 500 таңба.** Сондықтан екі нұсқа бар: панельге
+> қойылатын қысқасы және толық нұсқасы. Толығы бұл жерде анықтама
+> ретінде сақталады, әрі оны GitHub-тағы issue-де немесе модератор
+> сұраса, жауап ретінде пайдалануға болады.
+
 ---
+
+## Панельге қойылатын қысқа нұсқа (500 таңбаға дейін)
+
+```
+Fork of uBlock Origin Lite (GPLv3), rebranded for Kazakhstan. LICENSE.txt and copyright headers preserved. Upstream: github.com/gorhill/uBlock
+
+IMPORTANT: the UI opens in Kazakh. Chrome has no Kazakh locale, so the extension manages its own language. To review in English: options page > Settings > "Интерфейс тілі" > English.
+
+Default mode is "complete", hence the all-sites permission; "basic" stops all page access.
+
+Build steps: README.md in the package. Source: github.com/jambyylf/tazakor
+```
+
+---
+
+## Толық нұсқа (анықтама үшін)
 
 ```
 WHAT THIS EXTENSION IS
