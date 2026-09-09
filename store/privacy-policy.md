@@ -2,7 +2,7 @@
 
 **Қолданылады:** ТазаКөр (TazaKor) браузер кеңейтіміне, Chrome Web Store нұсқасына
 **Жариялаушы:** jambyylf
-**Байланыс:** <!-- ТОЛТЫРЫҢЫЗ: электрондық пошта -->
+**Байланыс:** <10airpro@gmail.com>
 **Мәселе хабарлау:** <https://github.com/jambyylf/tazakor/issues>
 **Соңғы жаңартылған күні:** 2026-09-09
 
@@ -113,7 +113,7 @@
 
 **Применяется к:** браузерному расширению ТазаКөр (TazaKor), версия в Chrome Web Store
 **Издатель:** jambyylf
-**Контакт:** <!-- ЗАПОЛНИТЬ: адрес электронной почты -->
+**Контакт:** <10airpro@gmail.com>
 **Сообщить о проблеме:** <https://github.com/jambyylf/tazakor/issues>
 **Дата последнего обновления:** 2026-09-09
 
@@ -206,7 +206,7 @@
 
 **Applies to:** the TazaKor (ТазаКөр) browser extension, Chrome Web Store listing
 **Publisher:** jambyylf
-**Contact:** <!-- FILL IN: email address -->
+**Contact:** <10airpro@gmail.com>
 **Report an issue:** <https://github.com/jambyylf/tazakor/issues>
 **Last updated:** 2026-09-09
 
