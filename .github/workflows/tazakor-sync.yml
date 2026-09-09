@@ -26,6 +26,9 @@ env:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    # Құрастыру сүзгі тізімдерін жүктейді, сондықтан баяу желіде ұзаққа
+    # созылуы мүмкін. Мәңгі ілініп қалмас үшін шектеу қойылған.
+    timeout-minutes: 60
     steps:
       - name: Репозиторийді алу
         uses: actions/checkout@v4
