@@ -410,11 +410,10 @@
   },
   {
     "id": "kz",
-    "group": "regions",
-    "lang": "kk",
+    "group": "default",
     "name": "🇰🇿kz: ТазаКөр — қазақстандық тізім",
     "tags": "ads kazakh kazakhstan qazaq",
-    "enabled": false,
+    "enabled": true,
     "urls": [
       "https://raw.githubusercontent.com/jambyylf/tazakor/brand/filters/kz.txt"
     ],
