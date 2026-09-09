@@ -130,6 +130,19 @@ cp platform/mv3/extension/lib/s14e-serializer/s14e-serializer.js \
     "$UBOL_DIR"/lib/
 
 echo "*** uBOLite.mv3: Generating rulesets"
+
+# ТазаКөр: репозиторийдегі жергілікті сүзгі тізімдерін кэшке көшіру.
+# make-rulesets.js әр тізімді алдымен кэштен іздейді, сондықтан мұнда
+# көшірілген файлдар желіден жүктелмейді. Файл аты (кеңейтімсіз)
+# rulesets.json ішіндегі "id" мәнімен дәл бірдей болуы керек.
+UBOL_CACHE_DIR="$UBOL_DIR/../mv3-data/$PLATFORM"
+mkdir -p "$UBOL_CACHE_DIR"
+for f in filters/*.txt; do
+    [ -e "$f" ] || continue
+    cp "$f" "$UBOL_CACHE_DIR/$(basename "$f" .txt)"
+    echo "    жергілікті тізім: $f -> $(basename "$f" .txt)"
+done
+
 UBOL_BUILD_DIR=$(mktemp -d)
 mkdir -p "$UBOL_BUILD_DIR"
 ./tools/make-nodejs.sh "$UBOL_BUILD_DIR"
