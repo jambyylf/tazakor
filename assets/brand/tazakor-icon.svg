@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="TazaKor">
+  <title>TazaKor</title>
+  <defs>
+    <linearGradient id="tazakor" gradientUnits="userSpaceOnUse"
+      x1="-122.60" y1="-52.75" x2="-37.71" y2="-135.85">
+      <stop offset="0.00" stop-color="#03A8F1"/>
+      <stop offset="0.19" stop-color="#379EF2"/>
+      <stop offset="0.31" stop-color="#698DF4"/>
+      <stop offset="0.44" stop-color="#8A7CF6"/>
+      <stop offset="0.56" stop-color="#A16DF8"/>
+      <stop offset="0.69" stop-color="#B65EFA"/>
+      <stop offset="0.81" stop-color="#BB5BFA"/>
+      <stop offset="1.00" stop-color="#BB5BFA"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#tazakor)">
+    <path d="M79.51 77.34A37.97 37.97 0 1 1 72.62 39.09L60.67 49.48A22.14 22.14 0 1 0 65.99 61.78Z"/>
+    <path d="M72.62 39.09L106.17 77.69L106.17 26.17L122.00 26.17L122.00 101.83L106.17 101.83L60.67 49.48Z"/>
+  </g>
+</svg>
