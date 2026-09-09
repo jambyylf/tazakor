@@ -434,6 +434,7 @@ async function onMessage(request, sender) {
             firstRun: process.firstRun,
             isSideloaded,
             developerMode: rulesetConfig.developerMode,
+            uiLanguage: rulesetConfig.uiLanguage,
             disabledFeatures,
             supportsCompiledFilters: supportsOffscreenDocument,
             supportsUserScripts: supportsUserScripts(),
@@ -461,6 +462,15 @@ async function onMessage(request, sender) {
         rulesetConfig.autoReload = request.state && true || false;
         await saveRulesetConfig();
         broadcastMessage({ autoReload: rulesetConfig.autoReload });
+        return;
+
+    // ТазаКөр: интерфейс тілі. Бос жол — браузердің тілін ұстану.
+    case 'setUiLanguage':
+        rulesetConfig.uiLanguage = /^[a-z]{2}(_[A-Za-z]+)?$/.test(request.lang || '')
+            ? request.lang
+            : '';
+        await saveRulesetConfig();
+        broadcastMessage({ uiLanguage: rulesetConfig.uiLanguage });
         return;
 
     case 'setShowBlockedCount':

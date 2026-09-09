@@ -295,6 +295,18 @@
     "message": "Чтобы применять косметические фильтры или скриптлеты из песочницы, необходимо предоставить ТазаКөр разрешение на выполнение пользовательских скриптов.",
     "description": "A notice to inform user that the enforcement of some filters requires permission to execute 'user scripts'"
   },
+  "uiLanguageLabel": {
+    "message": "Язык интерфейса",
+    "description": "Label of the interface language selector in the settings pane"
+  },
+  "uiLanguageBrowserDefault": {
+    "message": "Язык браузера",
+    "description": "Option meaning: follow the browser language"
+  },
+  "uiLanguageLegend": {
+    "message": "В Chrome нет казахского языка интерфейса, поэтому этот параметр предоставляет само расширение. Название расширения, которое показывает браузер, остаётся на языке браузера.",
+    "description": "Explanation under the interface language selector"
+  },
   "developerModeLabel": {
     "message": "Режим разработчика",
     "description": "Label for a checkbox in the options page"

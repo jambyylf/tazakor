@@ -295,6 +295,18 @@
     "message": "Құмсалғыштағы косметикалық және скриптлет сүзгілерін қолдану үшін ТазаКөрге пайдаланушы скрипттерін орындауға рұқсат беру қажет.",
     "description": "A notice to inform user that the enforcement of some filters requires permission to execute 'user scripts'"
   },
+  "uiLanguageLabel": {
+    "message": "Интерфейс тілі",
+    "description": "Label of the interface language selector in the settings pane"
+  },
+  "uiLanguageBrowserDefault": {
+    "message": "Браузердің тілі",
+    "description": "Option meaning: follow the browser language"
+  },
+  "uiLanguageLegend": {
+    "message": "Chrome-да қазақ тілі жоқ, сондықтан бұл параметрді кеңейтім өзі ұсынады. Браузер көрсететін кеңейтім атауы браузердің тілінде қалады.",
+    "description": "Explanation under the interface language selector"
+  },
   "developerModeLabel": {
     "message": "Әзірлеуші режимі",
     "description": "Label for a checkbox in the options page"
