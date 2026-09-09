@@ -309,6 +309,17 @@ self.ubolOverlay = {
     async install(file, onmessage) {
         this.file = file;
         const dynamicURL = new URL(this.webext.runtime.getURL(file));
+        // ТазаКөр: бұл беттер use_dynamic_url арқылы БӨЛЕК origin-де ашылады,
+        // сондықтан кеңейтімнің localStorage-ы оларға жетпейді. Таңдалған
+        // тілді URL арқылы жеткіземіз, i18n.js оны ?lang= параметрінен оқиды.
+        try {
+            const bin = await this.webext.storage.local.get('rulesetConfig');
+            const lang = bin?.rulesetConfig?.uiLanguage || '';
+            if ( /^[a-z]{2}(_[A-Za-z]+)?$/.test(lang) ) {
+                dynamicURL.searchParams.set('lang', lang);
+            }
+        } catch {
+        }
         return new Promise(resolve => {
             const frame = document.createElement('iframe');
             const secretAttr = this.secretAttr;

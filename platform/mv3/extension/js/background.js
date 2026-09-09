@@ -470,6 +470,9 @@ async function onMessage(request, sender) {
             ? request.lang
             : '';
         await saveRulesetConfig();
+        // Бұғаттау бетінің мекенжайында тіл жазылатындықтан, DNR
+        // ережелерін қайта тіркеу керек.
+        await setStrictBlockMode(rulesetConfig.strictBlockMode, true);
         broadcastMessage({ uiLanguage: rulesetConfig.uiLanguage });
         return;
 
