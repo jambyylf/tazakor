@@ -34,7 +34,10 @@ dom.body.dataset.platform = webextFlavor;
 
 {
     const manifest = runtime.getManifest();
-    dom.text('#aboutNameVer', `${manifest.name} ${manifest.version}`);
+    // ТазаКөр: getManifest().name браузердің тілін қайтарады, сондықтан
+    // өз аудармамызды қолданамыз, әйтпесе About панеліне бөтен тілдегі
+    // жол сіңіп кетеді.
+    dom.text('#aboutNameVer', `${i18n.getMessage('extName') || manifest.name} ${manifest.version}`);
 }
 
 dom.attr('a', 'target', '_blank');

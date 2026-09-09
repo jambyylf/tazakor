@@ -47,6 +47,9 @@ export async function backupToObject(currentConfig) {
     if ( currentConfig.autoReload !== defaultConfig.autoReload ) {
         out.autoReload = currentConfig.autoReload;
     }
+    if ( currentConfig.uiLanguage !== defaultConfig.uiLanguage ) {
+        out.uiLanguage = currentConfig.uiLanguage;
+    }
     if ( currentConfig.developerMode !== defaultConfig.developerMode ) {
         out.developerMode = currentConfig.developerMode;
     }
@@ -95,6 +98,11 @@ export async function restoreFromObject(targetConfig) {
     await sendMessage({
         what: 'setAutoReload',
         state: targetConfig.autoReload ?? defaultConfig.autoReload
+    });
+
+    await sendMessage({
+        what: 'setUiLanguage',
+        lang: targetConfig.uiLanguage ?? defaultConfig.uiLanguage,
     });
 
     await sendMessage({

@@ -295,6 +295,18 @@
     "message": "To enforce cosmetic or scriptlet filters from the sandbox, you must grant TazaKor permission to run user scripts.",
     "description": "A notice to inform user that the enforcement of some filters requires permission to execute 'user scripts'"
   },
+  "uiLanguageLabel": {
+    "message": "Interface language",
+    "description": "Label of the interface language selector in the settings pane"
+  },
+  "uiLanguageBrowserDefault": {
+    "message": "Browser language",
+    "description": "Option meaning: follow the browser language"
+  },
+  "uiLanguageLegend": {
+    "message": "Chrome does not offer Kazakh as an interface language, so this setting is provided by the extension itself. The extension name shown by the browser stays in the browser’s language.",
+    "description": "Explanation under the interface language selector"
+  },
   "developerModeLabel": {
     "message": "Developer mode",
     "description": "Label for a checkbox in the options page"

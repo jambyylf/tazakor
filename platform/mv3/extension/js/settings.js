@@ -47,6 +47,31 @@ function renderWidgets() {
 
     qs$('#autoReload input[type="checkbox"]').checked = data.autoReload;
 
+    // ТазаКөр: интерфейс тілі. localStorage — i18n.js синхронды оқитын жалғыз
+    // көз, ал шындықтың көзі chrome.storage. Екеуі айырылып қалса (жасырын
+    // терезе, деректер тазаланған), осы жерде түзеп, бір рет қайта жүктейміз.
+    {
+        const lang = data.uiLanguage || '';
+        qs$('#uiLanguage').value = lang;
+        let mirrored = null;
+        try { mirrored = self.localStorage.getItem('ubol.uiLanguage'); } catch {}
+        if ( (mirrored || '') !== lang ) {
+            try {
+                if ( lang !== '' ) {
+                    self.localStorage.setItem('ubol.uiLanguage', lang);
+                } else {
+                    self.localStorage.removeItem('ubol.uiLanguage');
+                }
+                // Шексіз цикл болмауы үшін бір реттік жалауша
+                if ( self.sessionStorage.getItem('ubol.langSynced') === null ) {
+                    self.sessionStorage.setItem('ubol.langSynced', '1');
+                    self.location.reload();
+                    return;
+                }
+            } catch {}
+        }
+    }
+
     {
         const input = qs$('#showBlockedCount input[type="checkbox"]');
         if ( data.canShowBlockedCount ) {
@@ -193,6 +218,24 @@ async function resetSettings() {
 
 /******************************************************************************/
 
+// ТазаКөр: тіл ауысқанда МІНДЕТТІ ТҮРДЕ бетті қайта жүктейміз. Қайта render
+// жасауға болмайды: i18n.js-тің [aria-label] мен [placeholder] өтулері кілтті
+// аудармамен үстінен жазады, сондықтан екінші render оларды үнсіз бұзады.
+dom.on('#uiLanguage', 'change', ev => {
+    const lang = ev.target.value || '';
+    sendMessage({ what: 'setUiLanguage', lang }).then(( ) => {
+        try {
+            if ( lang !== '' ) {
+                self.localStorage.setItem('ubol.uiLanguage', lang);
+            } else {
+                self.localStorage.removeItem('ubol.uiLanguage');
+            }
+            self.sessionStorage.removeItem('ubol.langSynced');
+        } catch {}
+        self.location.reload();
+    });
+});
+
 dom.on('#autoReload input[type="checkbox"]', 'change', ev => {
     sendMessage({
         what: 'setAutoReload',
@@ -257,6 +300,22 @@ listen.onmessage = ev => {
         if ( message.hasOmnipotence !== local.hasOmnipotence ) {
             local.hasOmnipotence = message.hasOmnipotence;
             render = true;
+        }
+    }
+
+    if ( message.uiLanguage !== undefined ) {
+        if ( message.uiLanguage !== local.uiLanguage ) {
+            local.uiLanguage = message.uiLanguage;
+            try {
+                if ( message.uiLanguage !== '' ) {
+                    self.localStorage.setItem('ubol.uiLanguage', message.uiLanguage);
+                } else {
+                    self.localStorage.removeItem('ubol.uiLanguage');
+                }
+                self.sessionStorage.removeItem('ubol.langSynced');
+            } catch {}
+            self.location.reload();
+            return;
         }
     }
 
