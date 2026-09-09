@@ -5,3 +5,5 @@ node_modules/
 /dist/build/
 /tmp/
 .DS_Store
+# ТазаКөр: дүкенге арналған архивтер
+/dist/*.zip
