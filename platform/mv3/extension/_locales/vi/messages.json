@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "uBlock Origin Lite",
+    "message": "TazaKor",
     "description": "extension name."
   },
   "extShortDesc": {
@@ -12,8 +12,8 @@
     "description": "Appears aside each filter list in the _3rd-party filters_ pane"
   },
   "dashboardName": {
-    "message": "uBO Lite — Bảng điều khiển",
-    "description": "English: uBO Lite — Dashboard"
+    "message": "TazaKor — Bảng điều khiển",
+    "description": "English: TazaKor — Dashboard"
   },
   "settingsPageName": {
     "message": "Cài đặt",
@@ -104,7 +104,7 @@
     "description": "Placeholder text which describes the purpose of the textarea widget"
   },
   "customListImportUserScriptsInfo": {
-    "message": "Để áp dụng các bộ lọc trong danh sách đã nhập, bạn phải cấp cho uBO Lite quyền thực thi 'các tập lệnh người dùng'.",
+    "message": "Để áp dụng các bộ lọc trong danh sách đã nhập, bạn phải cấp cho TazaKor quyền thực thi 'các tập lệnh người dùng'.",
     "description": "A notice to inform user that the enforcement of some filters requires permission to execute 'user scripts'"
   },
   "customFiltersImportExportLabel": {
@@ -116,7 +116,7 @@
     "description": "Placeholder text which describes the purpose of the textarea widget"
   },
   "userScriptsInfo": {
-    "message": "Mở trang tiện ích mở rộng của trình duyệt (<code>chrome://extensions</code> trong Chrome hoặc <code>about:addons</code> trong Firefox), mở chi tiết <b>uBO Lite</b> và bật <b>Cho phép tập lệnh người dùng</b> (còn được gọi là “tập lệnh của bên thứ ba chưa được xác minh”).",
+    "message": "Mở trang tiện ích mở rộng của trình duyệt (<code>chrome://extensions</code> trong Chrome hoặc <code>about:addons</code> trong Firefox), mở chi tiết <b>TazaKor</b> và bật <b>Cho phép tập lệnh người dùng</b> (còn được gọi là “tập lệnh của bên thứ ba chưa được xác minh”).",
     "description": "A notice to inform user on how to enable 'user scripts' permission"
   },
   "aboutChangelog": {
@@ -188,7 +188,7 @@
     "description": "An entry in the widget used to select the type of issue"
   },
   "supportS6Select1Option3": {
-    "message": "Phát hiện uBO Lite",
+    "message": "Phát hiện TazaKor",
     "description": "An entry in the widget used to select the type of issue"
   },
   "supportS6Select1Option4": {
@@ -196,7 +196,7 @@
     "description": "An entry in the widget used to select the type of issue"
   },
   "supportS6Select1Option5": {
-    "message": "Trục trặc khi bật uBO Lite",
+    "message": "Trục trặc khi bật TazaKor",
     "description": "An entry in the widget used to select the type of issue"
   },
   "supportS6Select1Option6": {
@@ -292,7 +292,7 @@
     "description": "Header for filter-creation section in the dashboard"
   },
   "sandboxEditorUserScriptsInfo": {
-    "message": "Để áp dụng các bộ lọc trong hộp thử nghiệm, bạn phải cấp cho uBO Lite quyền thực thi 'các tập lệnh người dùng'.",
+    "message": "Để áp dụng các bộ lọc trong hộp thử nghiệm, bạn phải cấp cho TazaKor quyền thực thi 'các tập lệnh người dùng'.",
     "description": "A notice to inform user that the enforcement of some filters requires permission to execute 'user scripts'"
   },
   "developerModeLabel": {
@@ -324,7 +324,7 @@
     "description": "Web page title for the strict-blocked page"
   },
   "strictblockSentence1": {
-    "message": "uBO Lite đã ngăn tải trang sau:",
+    "message": "TazaKor đã ngăn tải trang sau:",
     "description": "Sentence used in the strict-blocked page"
   },
   "strictblockReasonSentence1": {

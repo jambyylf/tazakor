@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "uBlock Origin Lite",
+    "message": "ТазаКөр — жарнамасыз интернет",
     "description": "extension name."
   },
   "extShortDesc": {
-    "message": "Мазмұнды сүзгілеудің тиімді құралы. Жарнаманы, трекерлерді, майнерлерді және т.б. орнатқаннан кейін бірден блоктайды.",
+    "message": "Мазмұнды сүзгілеудің тиімді құралы. Жарнаманы, трекерлерді, майнерлерді және т.б. орнатқаннан кейін бірден бұғаттайды.",
     "description": "this will be in the Chrome web store: must be 132 characters or less"
   },
   "perRulesetStats": {
@@ -12,15 +12,15 @@
     "description": "Appears aside each filter list in the _3rd-party filters_ pane"
   },
   "dashboardName": {
-    "message": "uBO Lite — Бақылау тақтасы",
-    "description": "English: uBO Lite — Dashboard"
+    "message": "ТазаКөр — Басқару тақтасы",
+    "description": "English: ТазаКөр — Dashboard"
   },
   "settingsPageName": {
     "message": "Баптаулар",
     "description": "appears as tab name in dashboard"
   },
   "customFiltersPageName": {
-    "message": "Пайдаланушылық сүзгілер",
+    "message": "Жеке сүзгілер",
     "description": "appears as tab name in dashboard"
   },
   "developPageName": {
@@ -52,7 +52,7 @@
     "description": "Tooltip used for the 'chat' icon in the panel"
   },
   "popupTipDashboard": {
-    "message": "Бақылау тақтасын ашу",
+    "message": "Басқару тақтасын ашу",
     "description": "English: Click to open the dashboard"
   },
   "popupMoreButton": {
@@ -64,7 +64,7 @@
     "description": "Label to be used to hide popup panel sections"
   },
   "3pGroupDefault": {
-    "message": "Үнсіз келісім бойынша",
+    "message": "Әдепкі",
     "description": "Header for a ruleset section in 'Filter lists pane'"
   },
   "3pGroupAds": {
@@ -104,7 +104,7 @@
     "description": "Placeholder text which describes the purpose of the textarea widget"
   },
   "customListImportUserScriptsInfo": {
-    "message": "To enforce cosmetic or scriptlet filters from imported lists, you must grant uBO Lite permission to run user scripts.",
+    "message": "Импортталған тізімдердегі косметикалық және скриптлет сүзгілерін қолдану үшін ТазаКөрге пайдаланушы скрипттерін орындауға рұқсат беру қажет.",
     "description": "A notice to inform user that the enforcement of some filters requires permission to execute 'user scripts'"
   },
   "customFiltersImportExportLabel": {
@@ -116,7 +116,7 @@
     "description": "Placeholder text which describes the purpose of the textarea widget"
   },
   "userScriptsInfo": {
-    "message": "Браузеріңіздің кеңейтулер бетін ашыңыз (<code>chrome://extensions</code> Chrome-да немесе <code>about:addons</code> Firefox-та), <b>uBO Lite</b> мәліметтерін ашып, <b>Пайдаланушы скрипттеріне рұқсат ету</b> (сонымен қатар “расталмаған үшінші тарап скрипттері” деп аталады) қосқышын қосыңыз.",
+    "message": "Браузеріңіздің кеңейтулер бетін ашыңыз (<code>chrome://extensions</code> Chrome-да немесе <code>about:addons</code> Firefox-та), <b>ТазаКөр</b> мәліметтерін ашып, <b>Пайдаланушы скрипттеріне рұқсат ету</b> (сонымен қатар “расталмаған үшінші тарап скрипттері” деп аталады) қосқышын қосыңыз.",
     "description": "A notice to inform user on how to enable 'user scripts' permission"
   },
   "aboutChangelog": {
@@ -188,7 +188,7 @@
     "description": "An entry in the widget used to select the type of issue"
   },
   "supportS6Select1Option3": {
-    "message": "uBO Lite-ты анықтайды",
+    "message": "ТазаКөрді анықтайды",
     "description": "An entry in the widget used to select the type of issue"
   },
   "supportS6Select1Option4": {
@@ -196,7 +196,7 @@
     "description": "An entry in the widget used to select the type of issue"
   },
   "supportS6Select1Option5": {
-    "message": "uBO Lite іске қосылғанда дұрыс жұмыс істемейді",
+    "message": "ТазаКөр іске қосылғанда дұрыс жұмыс істемейді",
     "description": "An entry in the widget used to select the type of issue"
   },
   "supportS6Select1Option6": {
@@ -216,11 +216,11 @@
     "description": "Text for button which opens an external web page in Support pane"
   },
   "defaultFilteringModeSectionLabel": {
-    "message": "Үнсіз келісім бойынша сүзгілеу режимі",
+    "message": "Әдепкі сүзгілеу режимі",
     "description": "The header text for the default filtering mode section"
   },
   "defaultFilteringModeDescription": {
-    "message": "Үнсіз келісім бойынша сүзгілеу режимі әрбір веб-сайттың сүзгілеу режимдерімен қайта анықталады. Кез келген берілген веб-сайтта оған ең жақсы келетін режимге сай сүзгілеу режимін реттеуге болады. Әр режимнің өз артықшылықтары мен кемшіліктері бар.",
+    "message": "Әдепкі сүзгілеу режимі әрбір веб-сайттың сүзгілеу режимдерімен қайта анықталады. Кез келген берілген веб-сайтта оған ең жақсы келетін режимге сай сүзгілеу режимін реттеуге болады. Әр режимнің өз артықшылықтары мен кемшіліктері бар.",
     "description": "This describes the default filtering mode setting"
   },
   "filteringMode0Name": {
@@ -232,7 +232,7 @@
     "description": "Name of blocking mode 1"
   },
   "filteringMode2Name": {
-    "message": "оптималды",
+    "message": "оңтайлы",
     "description": "Name of blocking mode 2"
   },
   "filteringMode3Name": {
@@ -268,19 +268,19 @@
     "description": "Label for a checkbox in the options page"
   },
   "showBlockedCountLabel": {
-    "message": "Саймандар панелі таңбашасында блокталған сұраулар санын көрсету",
+    "message": "Құралдар тақтасының таңбашасында бұғатталған сұраулар санын көрсету",
     "description": "Label for a checkbox in the options page"
   },
   "enableStrictBlockLabel": {
-    "message": "Қатаң блоктауды іске қосу",
+    "message": "Қатаң бұғаттауды іске қосу",
     "description": "Label for a checkbox in the options page"
   },
   "enableStrictBlockLegend": {
-    "message": "Ықтимал қалаусыз сайттарға навигация блокталған болады және сізге жалғастыру опциясы ұсынылады.",
+    "message": "Ықтимал қалаусыз сайттарға өту бұғатталады, ал сізге жалғастыру мүмкіндігі ұсынылады.",
     "description": "Short description for a checkbox in the options page"
   },
   "enablePopupBlockLabel": {
-    "message": "Қалқымалы терезелерді блоктауды қосу",
+    "message": "Қалқымалы терезелерді бұғаттауды қосу",
     "description": "Label for a checkbox in the options page"
   },
   "enablePopupBlockLegend": {
@@ -292,7 +292,7 @@
     "description": "Header for filter-creation section in the dashboard"
   },
   "sandboxEditorUserScriptsInfo": {
-    "message": "To enforce cosmetic or scriptlet filters from the sandbox, you must grant uBO Lite permission to run user scripts.",
+    "message": "Құмсалғыштағы косметикалық және скриптлет сүзгілерін қолдану үшін ТазаКөрге пайдаланушы скрипттерін орындауға рұқсат беру қажет.",
     "description": "A notice to inform user that the enforcement of some filters requires permission to execute 'user scripts'"
   },
   "developerModeLabel": {
@@ -308,11 +308,11 @@
     "description": "The header text for the back up/restore section"
   },
   "settingsBackupRestoreSummary": {
-    "message": "Пайдаланушылық баптауларыңыздың файлға сақтық көшірмесін жасаңыз немесе пайдаланушылық баптауларыңызды файлдан қалпына келтіріңіз.",
+    "message": "Жеке баптауларыңыздың файлға сақтық көшірмесін жасаңыз немесе жеке баптауларыңызды файлдан қалпына келтіріңіз.",
     "description": "A summary description of the back up/restore section."
   },
   "settingsBackupRestoreLegend": {
-    "message": "Қалпына келтіру барлық ағымдағы пайдаланушылық баптауларыңыздың үстінен жазады.",
+    "message": "Қалпына келтіру барлық ағымдағы жеке баптауларыңыздың үстінен жазады.",
     "description": "Important information about the back up/restore section."
   },
   "findListsPlaceholder": {
@@ -320,19 +320,19 @@
     "description": "Placeholder for the input field used to find lists"
   },
   "strictblockTitle": {
-    "message": "Бет блокталды",
+    "message": "Бет бұғатталды",
     "description": "Web page title for the strict-blocked page"
   },
   "strictblockSentence1": {
-    "message": "uBO Lite келесі беттің жүктелуіне жол бермеді:",
+    "message": "ТазаКөр келесі беттің жүктелуіне жол бермеді:",
     "description": "Sentence used in the strict-blocked page"
   },
   "strictblockReasonSentence1": {
-    "message": "{{listname}} ішіндегі сәйкес сүзгіге байланысты бет блокталды.",
+    "message": "{{listname}} ішіндегі сәйкес сүзгіге байланысты бет бұғатталды.",
     "description": "Text informing about what is causing the page to be blocked"
   },
   "strictblockRedirectSentence1": {
-    "message": "Блокталған бет басқа сайтқа бағыттағысы келеді. Егер жалғастыруды таңдасаңыз, тікелей мына мекенжайға өтесіз: {{url}}",
+    "message": "Бұғатталған бет басқа сайтқа бағыттағысы келеді. Егер жалғастыруды таңдасаңыз, тікелей мына мекенжайға өтесіз: {{url}}",
     "description": "Text warning about an incoming redirect"
   },
   "strictblockNoParamsPrompt": {
@@ -364,11 +364,11 @@
     "description": "Tooltip for the button used to exit zapper mode"
   },
   "pickerTipEnter": {
-    "message": "Пайдаланушылық сүзгі жасау",
+    "message": "Жеке сүзгі жасау",
     "description": "Label for the menu entry to create cosmetic filters"
   },
   "unpickerTipEnter": {
-    "message": "Пайдаланушылық сүзгіні өшіру",
+    "message": "Жеке сүзгіні өшіру",
     "description": "Label for the menu entry to delete cosmetic filters"
   },
   "developDropdownLabel": {
@@ -380,7 +380,7 @@
     "description": "An option in a dropdown list"
   },
   "developOptionCustomDnrRules": {
-    "message": "Пайдаланушылық DNR ережелері",
+    "message": "Жеке DNR ережелері",
     "description": "An option in a dropdown list"
   },
   "developOptionDnrRulesOf": {
@@ -428,7 +428,7 @@
     "description": "Text for buttons used to reset configurations to default"
   },
   "resetToDefaultConfirm": {
-    "message": "Барлық пайдаланушылық баптауларыңыз өшіріледі. Расында бастапқы баптауларға қайтару керек пе?",
+    "message": "Барлық жеке баптауларыңыз өшіріледі. Расында әдепкі баптауларға қайтару керек пе?",
     "description": "Message asking user to confirm reset to default settings"
   },
   "dnrRulesWarning": {
