@@ -349,18 +349,6 @@
     "homeURL": "https://github.com/ABPindo/indonesianadblockrules"
   },
   {
-    "id": "ind-0",
-    "group": "regions",
-    "lang": "as bn gu hi kn ml mr ne pa si ta te",
-    "name": "🇮🇳in 🇱🇰lk 🇳🇵np: IndianList",
-    "tags": "ads assamese bengali gujarati hindi kannada malayalam marathi nepali punjabi sinhala tamil telugu",
-    "enabled": false,
-    "urls": [
-      "https://easylist-downloads.adblockplus.org/indianlist.txt"
-    ],
-    "homeURL": "https://github.com/mediumkreation/IndianList"
-  },
-  {
     "id": "irn-0",
     "group": "regions",
     "lang": "fa ps tg",
@@ -397,18 +385,6 @@
     "homeURL": "https://github.com/easylist/EasyListHebrew"
   },
   {
-    "id": "ita-0",
-    "group": "regions",
-    "lang": "it lij",
-    "name": "🇮🇹it: EasyList Italy",
-    "tags": "ads italian",
-    "enabled": false,
-    "urls": [
-      "https://easylist-downloads.adblockplus.org/easylistitaly.txt"
-    ],
-    "homeURL": "https://forums.lanik.us/viewforum.php?f=96"
-  },
-  {
     "id": "jpn-1",
     "group": "regions",
     "lang": "ja",
@@ -431,6 +407,18 @@
       "https://cdn.jsdelivr.net/npm/@filteringdev/filterslists-ko@latest/dist/filterslist-uBlockOrigin-classic.txt"
     ],
     "homeURL": "https://github.com/FilteringDev/filterslists-KO#filteringdevfilterslists-ko"
+  },
+  {
+    "id": "kz",
+    "group": "regions",
+    "lang": "kk",
+    "name": "🇰🇿kz: ТазаКөр — қазақстандық тізім",
+    "tags": "ads kazakh kazakhstan qazaq",
+    "enabled": false,
+    "urls": [
+      "https://raw.githubusercontent.com/jambyylf/tazakor/brand/filters/kz.txt"
+    ],
+    "homeURL": "https://github.com/jambyylf/tazakor"
   },
   {
     "id": "ltu-0",
@@ -556,18 +544,6 @@
       "https://raw.githubusercontent.com/easylist/ruadlist/master/cntblock.txt"
     ],
     "homeURL": "https://forums.lanik.us/viewforum.php?f=102"
-  },
-  {
-    "id": "spa-0",
-    "group": "regions",
-    "lang": "an ast ca cak es eu gl gn trs quz",
-    "name": "🇪🇸es 🇦🇷ar 🇲🇽mx 🇨🇴co: EasyList Spanish",
-    "tags": "ads aragonese basque catalan spanish español galician guarani",
-    "enabled": false,
-    "urls": [
-      "https://easylist-downloads.adblockplus.org/easylistspanish.txt"
-    ],
-    "homeURL": "https://forums.lanik.us/viewforum.php?f=103"
   },
   {
     "id": "spa-1",
