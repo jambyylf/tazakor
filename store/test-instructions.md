@@ -68,10 +68,10 @@ The package includes README.md with exact steps. In short:
 
     git clone https://github.com/jambyylf/tazakor.git
     cd tazakor
-    git checkout v1.0.0
+    git checkout v1.0.1
     git submodule init && git submodule update
     mkdir -p dist/build/mv3-data
-    bash tools/make-mv3.sh chromium 1.0.0
+    bash tools/make-mv3.sh chromium 1.0.1
     python tools/make-store-zip.py
 
 Note: rulesets/*.json are generated from filter lists fetched at build
@@ -102,8 +102,9 @@ CHANGES FROM UPSTREAM
 
 Rebranding (name, icons, UI strings), a fully revised Kazakh translation
 with an in-extension language switcher, default filtering mode changed from
-optimal to complete, an optional and currently empty Kazakhstan filter list,
-removal of three regional lists whose host is unreachable from Kazakhstan,
-and a weekly upstream-sync workflow. The filtering engine itself is
-unchanged.
+optimal to complete, a Kazakhstan filter list enabled by default (its rules
+were found by measuring traffic on popular Kazakhstan sites), the same Kazakh
+extension name in every locale, removal of three regional lists whose host
+is unreachable from Kazakhstan, and a weekly upstream-sync workflow. The
+filtering engine itself is unchanged.
 ```

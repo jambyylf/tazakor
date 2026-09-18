@@ -12,22 +12,23 @@
 
 ## Атауы (75 таңбаға дейін)
 
-Атау локаль файлдарындағы `extName` мәнінен келеді, сондықтан үш тілде де
-бөлек.
+Атау локаль файлдарындағы `extName` мәнінен келеді. Chrome-да қазақ тілі
+жоқ болғандықтан, 71 локальдың бәрінде бірдей қазақша атау тұр. Сонда
+дүкенде де, браузердің кеңейтімдер тізімінде де ол қазақша көрінеді.
 
 ### Қазақша
 ```
-ТазаКөр — жарнамасыз интернет
+ТазаКөр — Жарнамасыз Интернет
 ```
 
 ### Орысша
 ```
-ТазаКөр — интернет без рекламы
+ТазаКөр — Жарнамасыз Интернет
 ```
 
 ### Ағылшынша
 ```
-TazaKor — ad-free internet
+ТазаКөр — Жарнамасыз Интернет
 ```
 
 ---
@@ -79,6 +80,9 @@ Blocks ads, trackers and miners. An independent fork of the open-source uBlock O
   ескерту беріледі
 • Бетте қалып қойған элементті қолмен жасыру құралы
 • Өз сүзгіңізді жазу мүмкіндігі
+• Қазақстандық сайттарға арналған қосымша сүзгі тізімі: танымал сайттардың
+  трафигін өлшеу арқылы табылған, негізгі тізімдерге ілінбейтін жарнама
+  желілерін бұғаттайды
 
 СҮЗГІЛЕУ РЕЖИМДЕРІ
 
@@ -99,8 +103,7 @@ Blocks ads, trackers and miners. An independent fork of the open-source uBlock O
 ағылшыншаға ауыстыруға болады.
 
 Мұның себебі бар: Chrome браузерінде қазақ тілі мүлдем жоқ, сондықтан
-кеңейтім тілді өзі басқарады. Chrome-ның кеңейтімдер тізімінде атау
-браузердің тілінде қала береді, оны өзгерту мүмкін емес.
+кеңейтім тілді өзі басқарады.
 
 ҚҰПИЯЛЫҚ
 
@@ -141,6 +144,9 @@ Blocks ads, trackers and miners. An independent fork of the open-source uBlock O
   списках фильтров
 • Инструмент для скрытия оставшихся элементов вручную
 • Возможность писать собственные фильтры
+• Отдельный список фильтров для казахстанских сайтов: найден измерением
+  трафика популярных сайтов, блокирует рекламные сети, которые не входят в
+  основные списки
 
 РЕЖИМЫ ФИЛЬТРАЦИИ
 
@@ -160,8 +166,7 @@ Blocks ads, trackers and miners. An independent fork of the open-source uBlock O
 переключить его на русский или английский.
 
 Причина: в Chrome вообще нет казахского языка интерфейса, поэтому
-расширение управляет языком самостоятельно. В списке расширений Chrome
-название остаётся на языке браузера, это изменить нельзя.
+расширение управляет языком самостоятельно.
 
 КОНФИДЕНЦИАЛЬНОСТЬ
 
@@ -201,6 +206,8 @@ FEATURES
   lists
 • Element picker for hiding leftovers by hand
 • Support for your own custom filters
+• A dedicated filter list for Kazakhstan websites, built by measuring the
+  traffic of popular sites; it blocks ad networks the main lists miss
 
 FILTERING MODES
 
@@ -220,8 +227,7 @@ The interface is in Kazakh by default. You can switch it to Russian or
 English in the settings.
 
 The reason: Chrome does not offer Kazakh as an interface language at all,
-so the extension manages its own. The extension name shown in Chrome's own
-extension list stays in the browser's language and cannot be changed.
+so the extension manages its own.
 
 PRIVACY
 

@@ -19,8 +19,12 @@ build output:
   71 locales; the Kazakh locale has been fully revised.
 - The default filtering mode is **complete** instead of *optimal*
   (`platform/mv3/extension/js/mode-manager.js`).
-- An optional, currently empty Kazakhstan filter list (`filters/kz.txt`) is
-  registered as ruleset `kz`.
+- A Kazakhstan filter list (`filters/kz.txt`) is registered as ruleset `kz`
+  and enabled by default. Its rules were found by measuring network traffic
+  on popular Kazakhstan websites; see `tools/measure/`.
+- The extension name is the same Kazakh string in every locale, so that it
+  appears in Kazakh in the store and in chrome://extensions regardless of the
+  browser language (Chrome has no Kazakh locale).
 - Three regional rulesets are removed (`ind-0`, `ita-0`, `spa-0`) because their
   host is unreachable from Kazakhstan.
 - `tools/make-mv3.sh` copies local filter lists from `filters/` into the build
@@ -36,11 +40,11 @@ The following assumes a Linux environment with `node` (17.5.0 or above),
 1. Open a Bash console
 2. `git clone https://github.com/jambyylf/tazakor.git`
 3. `cd tazakor`
-4. `git checkout v1.0.0`   (the exact commit this package was built from)
+4. `git checkout v1.0.1`   (the exact commit this package was built from)
 5. `git submodule init`
 6. `git submodule update`
 7. `mkdir -p dist/build/mv3-data`
-8. `bash tools/make-mv3.sh chromium 1.0.0`
+8. `bash tools/make-mv3.sh chromium 1.0.1`
 9. `python tools/make-store-zip.py`
 
 Step 8 must be given the version number. Without it the script produces a
@@ -56,7 +60,7 @@ artifact. It excludes `log.txt` and verifies that `manifest.json` sits at the
 archive root and that no development-only permission survived. The equivalent
 without the script is:
 
-    cd dist/build/uBOLite.chromium && zip -r -X ../../tazakor-1.0.0-chromium.zip . -x log.txt
+    cd dist/build/uBOLite.chromium && zip -r -X ../../tazakor-1.0.1-chromium.zip . -x log.txt
 
 Upon completion, the unpacked extension is in `dist/build/uBOLite.chromium`.
 

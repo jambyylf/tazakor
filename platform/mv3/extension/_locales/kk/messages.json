@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "ТазаКөр — жарнамасыз интернет",
+    "message": "ТазаКөр — Жарнамасыз Интернет",
     "description": "extension name."
   },
   "extShortDesc": {
@@ -304,7 +304,7 @@
     "description": "Option meaning: follow the browser language"
   },
   "uiLanguageLegend": {
-    "message": "Chrome-да қазақ тілі жоқ, сондықтан бұл параметрді кеңейтім өзі ұсынады. Браузер көрсететін кеңейтім атауы браузердің тілінде қалады.",
+    "message": "Chrome-да қазақ тілі жоқ, сондықтан бұл параметрді кеңейтім өзі ұсынады.",
     "description": "Explanation under the interface language selector"
   },
   "developerModeLabel": {

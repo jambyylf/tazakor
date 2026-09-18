@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "TazaKor — ad-free internet",
+    "message": "ТазаКөр — Жарнамасыз Интернет",
     "description": "extension name."
   },
   "extShortDesc": {
@@ -304,7 +304,7 @@
     "description": "Option meaning: follow the browser language"
   },
   "uiLanguageLegend": {
-    "message": "Chrome does not offer Kazakh as an interface language, so this setting is provided by the extension itself. The extension name shown by the browser stays in the browser’s language.",
+    "message": "Chrome does not offer Kazakh as an interface language, so this setting is provided by the extension itself.",
     "description": "Explanation under the interface language selector"
   },
   "developerModeLabel": {
